@@ -195,6 +195,33 @@ El análisis orientado a objetos es un método de análisis que examina los requ
 
 Estos objetos representan entidades físicas o abstractas del mundo real relevantes para el dominio. El objetivo consiste en identificar los objetos, sus atributos, comportamientos y relaciones, sin enfocarse en cómo serán implementados.
 
+### Técnica práctica: User Story Mapping
+
+El AOO puede sonar abstracto al principio: ¿cómo sabés qué objetos identificar en un sistema que todavía no existe? Una técnica accesible para empezar es el **User Story Mapping**, creada por Jeff Patton. No requiere conocimientos técnicos previos y es útil precisamente porque te obliga a pensar desde el usuario, no desde el código.
+
+Un **user story** (historia de usuario) describe una funcionalidad desde la perspectiva de quien la usa, con el formato:
+
+> *"Como [tipo de usuario], quiero [acción], para [objetivo o beneficio]."*
+
+Por ejemplo: *"Como cliente, quiero agregar productos al carrito, para poder comprarlos juntos."*
+
+El **User Story Mapping** organiza esas historias en un mapa bidimensional:
+
+- **Eje horizontal (izquierda a derecha):** el flujo de uso del sistema, ordenado como lo haría un usuario real. Primero busca productos, después los agrega al carrito, después paga, etc.
+- **Eje vertical (arriba a abajo):** el nivel de detalle y prioridad. Las historias más importantes van arriba; las variantes y casos especiales, abajo.
+
+#### Pasos para construir un User Story Map
+
+1. **Identificar a los actores:** ¿Quiénes usan el sistema? (cliente, administrador, vendedor…). Cada actor tiene sus propias necesidades.
+2. **Describir las actividades principales:** ¿Qué tareas grandes hace cada actor? Por ejemplo: *buscar*, *comprar*, *gestionar stock*. Estas van en la fila superior del mapa.
+3. **Desglosar en historias concretas:** Para cada actividad, escribir las acciones específicas que la componen. *"Buscar por categoría"*, *"filtrar por precio"*, *"ver detalle del producto"* son historias que componen la actividad *buscar*.
+4. **Priorizar:** Marcar cuáles historias forman el flujo mínimo que necesitás para que el sistema funcione (el llamado *walking skeleton*). Esto define qué construir primero.
+5. **Identificar los objetos:** Revisá todas las historias y subrayá los **sustantivos** (cliente, carrito, producto, pedido). Esos son los candidatos a clases de tu modelo.
+
+#### ¿Por qué usar esta técnica?
+
+El valor del User Story Mapping en este contexto no es que sea la técnica definitiva de análisis —en proyectos reales se usa mucho más formal— sino que te da una forma concreta de pasar de *"tengo un problema"* a *"tengo una lista de objetos candidatos"* sin necesitar experiencia previa en diseño de software. En la práctica, hacer este ejercicio antes de escribir cualquier clase evita el error más común: modelar objetos que nadie usa o, peor, no modelar los que realmente importan.
+
 ### Diseño Orientado a Objetos (DOO)
 
 El diseño orientado a objetos es un método de diseño de software que abarca el proceso de descomposición orientada a objetos y una notación para representar modelos lógicos y físicos del sistema en diseño.
