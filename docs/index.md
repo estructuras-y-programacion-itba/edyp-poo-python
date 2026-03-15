@@ -12,9 +12,10 @@ Está orientado a estudiantes de carreras no informáticas que ya programan en P
 
 ## ¿Qué vas a aprender?
 
-- [Qué es un paradigma de programación y cómo se diferencia el estructurado del orientado a objetos](paradigmas/introduccion.md)
+- [Qué es un paradigma de programación y cómo se diferencia el estructurado del orientado a objetos](introduccion/saberes_previos.md)
+- [Qué es la POO y por qué surgió](introduccion/que_es_poo.md)
 - [Cómo pensar en términos de objetos: abstracción, encapsulamiento, modularidad y jerarquía](modelo/elementos.md)
-- [Qué son el acoplamiento y la cohesión, y por qué importan en el diseño](paradigmas/introduccion.md#acoplamiento-y-cohesión)
+- [Qué son el acoplamiento y la cohesión, y por qué importan en el diseño](introduccion/saberes_previos.md#acoplamiento-y-cohesión)
 - [Los cinco principios SOLID y cómo aplicarlos en Python](modelo/solid.md)
 - [Cómo manejar errores con excepciones, incluyendo excepciones personalizadas](practicas/excepciones.md)
 - [Cómo escribir tests unitarios para clases con `pytest`](practicas/testing.md)
