@@ -4,9 +4,9 @@
 
 Un paradigma de programación es una manera de organizar y estructurar el código para resolver problemas. Define qué abstracciones tenés disponibles, cómo pensás el diseño y qué estilo de soluciones producís. No es solo una cuestión de sintaxis: es una forma de razonar sobre los problemas.
 
-En la práctica, cuando los alumnos llegan a esta materia ya programan de forma estructurada sin saberlo. Cada vez que escribiste una función en Python para resolver un problema, estabas usando el paradigma estructurado. El objetivo de esta materia es agregar una nueva forma de pensar a esa base que ya tenés.
+Quienes llegan a esta materia ya programan de forma estructurada sin saberlo. Cada vez que escribiste una función en Python para resolver un problema, estabas aplicando el paradigma estructurado. El objetivo es agregar una nueva forma de pensar a esa base que ya tenés.
 
-Python es multiparadigma: soporta el paradigma estructurado, el orientado a objetos y el funcional en el mismo lenguaje. Eso es una ventaja enorme — podés elegir el paradigma que mejor se adapta al problema que estás resolviendo, y en proyectos reales solemos combinarlos.
+Python es multiparadigma: soporta el estructurado, el orientado a objetos y el funcional dentro del mismo lenguaje. Esa flexibilidad es una ventaja concreta — podés elegir el paradigma que mejor se adapta al problema y, en proyectos reales, solemos combinarlos.
 
 > **Prerequisitos:** Esta guía asume que ya sabés Python básico — variables, funciones, `if`, `for` y estructuras de datos como listas y diccionarios. No se requiere experiencia previa con POO.
 
@@ -14,15 +14,15 @@ Python es multiparadigma: soporta el paradigma estructurado, el orientado a obje
 
 ## El Paradigma Estructurado
 
-En la materia Informática General, usamos Python para desarrollar nuestros progamas aplicando el paradigma estructurado. Vamos a definirlo para entener que es lo que hicimos hasta ahora y luego como se diferencia del paradigma orientado a objetos.
+En la materia Informática General, usamos Python para desarrollar nuestros programas aplicando el paradigma estructurado. Conviene definirlo para entender qué hicimos hasta ahora y, a partir de eso, contrastar con el paradigma orientado a objetos.
 
-La programación estructurada es un paradigma orientado a mejorar la claridad, calidad y tiempo de desarrollo de un programa, recurriendo únicamente a funciones y a tres estructuras de control básicas: secuencia, selección (`if` y `switch`) e iteración (bucles `for` y `while`).
+La programación estructurada busca mejorar la claridad, calidad y tiempo de desarrollo de un programa, recurriendo únicamente a funciones y a tres estructuras de control básicas: secuencia, selección (`if` y `switch`) e iteración (bucles `for` y `while`).
 
 ![Estructuras de control fundamentales: secuencia, selección e iteración](../img/espagueti.png)
 
-Se considera innecesario y contraproducente el uso de la transferencia incondicional (`break` y `continue` abusivos); esta instrucción suele acabar generando el llamado código espagueti, mucho más difícil de seguir y mantener.
+Dentro de este modelo, se considera innecesario y contraproducente el uso de transferencias incondicionales (`break` y `continue` abusivos); este tipo de instrucciones tiende a generar el llamado código espagueti, mucho más difícil de seguir y mantener.
 
-En la programación estructurada, los bloques fundamentales de construcción son **algoritmos** que definimos en funciones:
+El bloque fundamental de construcción son **algoritmos** encapsulados en funciones:
 
 ```python
 def factorial(n: int) -> int | str:
@@ -44,7 +44,7 @@ print(f"El factorial de -3 es: {factorial(-3)}")
 
 ### Código Espagueti
 
-Es un término peyorativo para los programas que tienen una estructura de control de flujo compleja e incomprensible. Su nombre deriva del hecho de que este tipo de código parece asemejarse a un plato de espaguetis: un montón de hilos intrincados y anudados.
+Término peyorativo para los programas con una estructura de control de flujo compleja e incomprensible. Su nombre alude a la similitud visual con un plato de fideos: una masa de hilos intrincados y anudados sin dirección aparente.
 
 ```python
 # ❌ Ejemplo de código espagueti: validación con flags anidados
@@ -76,9 +76,9 @@ Antes de entrar de lleno en el paradigma orientado a objetos, es fundamental ent
 
 ### Acoplamiento
 
-El acoplamiento es el grado en que las clases de un programa dependen unas de otras. Si para hacer cambios en una clase es necesario hacer cambios en otra, existe acoplamiento entre ambas.
+Grado en que los módulos de un programa dependen entre sí. Si para hacer cambios en una clase es necesario modificar otra, existe acoplamiento entre ambas.
 
-En POO, si una clase `X` usa una clase `Y`, se dice que `X` depende de `Y`: no puede realizar su trabajo sin `Y`. El acoplamiento es direccional: puede haber acoplamiento de `X` con `Y` sin que exista en sentido inverso.
+En POO, cuando una clase `X` usa una clase `Y`, se dice que `X` depende de `Y`: no puede realizar su trabajo sin ella. Cabe notar que el acoplamiento es direccional — puede existir dependencia de `X` hacia `Y` sin que se dé en sentido inverso.
 
 ```python
 # ❌ ALTO ACOPLAMIENTO: OrderProcessor crea y controla FileManager
@@ -115,11 +115,9 @@ class OrderProcessorV2:
 
 ### Cohesión
 
-Cohesión es lo contrario a acoplamiento. Algo está cohesionado si tiene sentido y una dirección común.
+Mientras el acoplamiento mide la dependencia *entre* módulos, la cohesión mide qué tan relacionados están los elementos *dentro* de un módulo. Algo tiene **alta cohesión** si su alcance está bien definido, sus límites son claros y su contenido responde a una única responsabilidad.
 
-En ingeniería del software, algo tiene **alta cohesión** si tiene un alcance definido, límites claros y contenido delimitado y perfectamente ubicado.
-
-En POO, una clase tendrá alta cohesión si sus métodos están relacionados entre sí, tienen contenido claro y temática común. Todo bien encerrado dentro de la clase y perfectamente delimitado.
+En POO, una clase tendrá alta cohesión si sus métodos están relacionados entre sí, tienen contenido claro y temática común — todo perfectamente delimitado dentro de la clase.
 
 ```python
 # ❌ BAJA COHESIÓN: UserManager hace demasiado
@@ -142,27 +140,27 @@ class ReportGenerator:
     def generate_user_report(self, users: list): ...
 ```
 
-Un código altamente cohesionado tiende a ser más autocontenido, con menos dependencias y más fácil de mantener.
+Un código altamente cohesionado tiende a ser más autocontenido, con menos dependencias externas y más fácil de mantener.
 
 ---
 
 ### ¿Qué es lo ideal?
 
-Teniendo en cuenta todo lo expuesto, hay que buscar el balance que garantiza mayor simplicidad y coherencia. La tendencia que deberíamos buscar es movernos siempre hacia **bajo acoplamiento y alta cohesión**.
+Considerando todo lo expuesto, el objetivo es alcanzar el balance que garantiza mayor simplicidad y coherencia. La dirección correcta es siempre hacia **bajo acoplamiento y alta cohesión**.
 
 ![Cuadrante de acoplamiento y cohesión: el objetivo es bajo acoplamiento y alta cohesión](../img/acoplamiento_cohesion_cuadrante.png)
 
-Un bajo acoplamiento nos garantiza:
+Apuntar al bajo acoplamiento garantiza:
 
-- Mejorar la mantenibilidad de los módulos del software, facilitar los cambios sin tener que revisar todos los módulos dependientes.
-- Mejorar la reutilización de las unidades del software.
-- Facilitar las pruebas de cada módulo, al ser más independientes.
+- Mejorar la mantenibilidad: los cambios en un módulo no arrastran modificaciones en otros.
+- Favorecer la reutilización de las unidades del software.
+- Facilitar las pruebas de cada módulo, al ser más independientes entre sí.
 
-Por otro lado, una alta cohesión nos permite:
+Por su parte, la alta cohesión permite:
 
 - Tener un código más entendible, legible y coherente.
-- Mejorar la reutilización, al tener todo lo relacionado con una cosa, en esa cosa.
-- Mejorar el mantenimiento del software, ya que todo está perfectamente localizado.
+- Mejorar la reutilización, al concentrar todo lo relacionado con una responsabilidad en el mismo lugar.
+- Mejorar el mantenimiento del software, dado que todo está perfectamente localizado.
 - Facilitar las pruebas de caja negra.
 
 ---

@@ -4,7 +4,7 @@ Un programa sin tests es un programa que no sabés si funciona. En POO, los test
 
 ## ¿Qué es un test unitario?
 
-Un **test unitario** testea **una sola unidad** de código en aislamiento. En POO, la unidad es una clase. El objetivo es verificar que sus métodos se comportan correctamente dado un estado inicial y unos inputs determinados.
+Un **test unitario** verifica **una sola unidad** de código en aislamiento — en POO, esa unidad es una clase. El objetivo es confirmar que sus métodos se comportan correctamente dado un estado inicial y unos inputs determinados.
 
 Lo que **no** hace un test unitario:
 
@@ -16,7 +16,7 @@ Si tu clase `Inventario` usa una clase `Producto`, en el test de `Inventario` va
 
 ## pytest: El Framework Estándar
 
-`pytest` es el framework de testing más usado en el ecosistema Python. Es más conciso que `unittest` y tiene un sistema de descubrimiento automático de tests.
+`pytest` es el framework de testing más usado en el ecosistema Python: más conciso que `unittest` y con descubrimiento automático de tests.
 
 **Instalación:**
 
@@ -36,9 +36,7 @@ mi_proyecto/
     └── test_producto.py
 ```
 
-- Los archivos de test deben llamarse `test_*.py` o `*_test.py`.
-- Las funciones (o métodos de clase) de test deben llamarse `test_*`.
-- pytest los descubre y ejecuta automáticamente.
+Los archivos de test deben llamarse `test_*.py` o `*_test.py`, y las funciones (o métodos de clase) deben comenzar con `test_`. Dada esa convención, pytest los descubre y ejecuta automáticamente.
 
 **Cómo correr los tests:**
 
@@ -58,7 +56,7 @@ pytest -v --tb=short
 
 **Assertions en pytest:**
 
-pytest usa el `assert` nativo de Python. Cuando una aserción falla, pytest muestra exactamente qué valores tenía cada lado:
+pytest usa el `assert` nativo de Python; cuando una aserción falla, muestra exactamente qué valores tenía cada lado:
 
 ```python
 assert cuenta.saldo == 1500    # si falla: AssertionError: assert 1200 == 1500
@@ -183,7 +181,7 @@ Cuando una clase depende de otra, no querés que los tests de la primera fallen 
 | Verificar que un método fue llamado | `mock.metodo.assert_called_once_with(args)` |
 | Verificar que un método NO fue llamado | `mock.metodo.assert_not_called()` |
 
-> **Nota sobre `spec=`**: usar `MagicMock(spec=MiClase)` hace que el mock solo permita llamar a los métodos que `MiClase` realmente tiene. Esto evita que los mocks "aprueben" código que llama a métodos con nombres incorrectos.
+> **Nota sobre `spec=`**: usar `MagicMock(spec=MiClase)` restringe el mock a los métodos que `MiClase` realmente tiene. Así se evita que los mocks "aprueben" código que llama a métodos con nombres incorrectos.
 
 ```python
 # src/gateway_pago.py

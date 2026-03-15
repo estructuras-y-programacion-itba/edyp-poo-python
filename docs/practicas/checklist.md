@@ -2,15 +2,15 @@
 
 ## Checklist: Antes de Entregar
 
-Un buen diseño orientado a objetos no es solo que el código funcione — es que sea mantenible, legible y correcto por diseño. Usá esta lista como guía antes de entregar cualquier trabajo práctico.
+Un buen diseño orientado a objetos no implica únicamente que el código funcione — implica que sea mantenible, legible y correcto por diseño. Usá esta lista como guía antes de entregar cualquier trabajo práctico.
 
 ### Código Limpio
 
-Antes de revisar ítem por ítem, vale la pena recordar los criterios generales de código limpio que aplican a todo el trabajo:
+Antes de revisar ítem por ítem, conviene tener presentes los criterios generales de código limpio que atraviesan todo el trabajo:
 
-- **Es obvio para otros programadores.** Los nombres de variables pobremente elegidos, clases y métodos extensos, y números mágicos hacen del código algo desprolijo y difícil de comprender.
-- **No tiene líneas duplicadas.** Cada vez que hacés un cambio en código duplicado tenés que repetirlo en cada copia. Esto induce a errores y dificulta la mantenibilidad.
-- **Tiene la menor cantidad de clases necesarias.** Menos código facilita el mantenimiento y reduce la cantidad de bugs. El diseño debe ser el mínimo para el propósito.
+- **Resulta obvio para otros programadores.** Los nombres de variables pobremente elegidos, clases y métodos extensos, y números mágicos hacen del código algo desprolijo y difícil de comprender.
+- **No contiene líneas duplicadas.** Cada vez que hacés un cambio en código duplicado tenés que repetirlo en cada copia. Esto induce a errores y dificulta la mantenibilidad.
+- **Usa la menor cantidad de clases necesarias.** Menos código facilita el mantenimiento y reduce la cantidad de bugs. El diseño debe ser el mínimo para el propósito.
 - **Pasa todos los tests.** Hay que probar nuestro código y asegurarse de que cada entrega satisface todos los tests.
 
 ### Diseño y Responsabilidad

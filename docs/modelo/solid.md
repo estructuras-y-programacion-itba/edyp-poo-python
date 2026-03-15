@@ -4,7 +4,7 @@
 
 Una clase debe tener una, y solo una, razón para cambiar.
 
-Si tenés una clase `Usuario` que gestiona datos del usuario, guarda en base de datos y además envía emails de bienvenida, está haciendo demasiado. Separar responsabilidades: `Usuario` (datos), `UsuarioRepository` (base de datos), `EmailService` (envíos).
+Tomá el caso de una clase `Usuario` que gestiona datos del usuario, guarda en base de datos y además envía emails de bienvenida: está haciendo demasiado. Separar responsabilidades conduce a un diseño más mantenible: `Usuario` (datos), `UsuarioRepository` (base de datos), `EmailService` (envíos).
 
 ```python
 # ❌ Viola SRP: la clase hace demasiado
@@ -28,7 +28,7 @@ class InvoiceRepository:
 
 Las clases deben estar abiertas para su extensión, pero cerradas para su modificación.
 
-Si querés agregar una nueva funcionalidad, no deberías tener que entrar a modificar el código que ya funciona y arriesgarte a romperlo. Usá polimorfismo: añadí nuevas clases en lugar de agregar `if/else` infinitos.
+Agregar nueva funcionalidad no debería requerir modificar código que ya funciona —y arriesgarse a romperlo. La solución es el polimorfismo: extendé el comportamiento agregando nuevas clases en lugar de acumular `if/else`.
 
 ```python
 # ❌ Viola OCP: hay que modificar la clase para agregar un nuevo formato
@@ -58,7 +58,7 @@ class CSVExporter(ReportExporter):
 
 Las clases derivadas deben poder sustituirse por sus clases base sin alterar el comportamiento correcto del programa.
 
-Si tenés una clase `Pato` y una hija `PatoDeHule`, y el programa explota porque `PatoDeHule` no puede volar, estás violando este principio. Asegurate de que la herencia tenga sentido semántico y funcional.
+Cuando una clase hija viola el contrato establecido por la clase base —por ejemplo, `PatoDeHule` lanzando una excepción en `volar()` cuando la base promete que ese método es válido—, el principio queda roto. La herencia debe tener sentido tanto semántico como funcional.
 
 ```python
 # ❌ Viola LSP: PatoDeHule no respeta el contrato de la clase base
@@ -116,7 +116,7 @@ for a in animales:
 
 Ninguna clase debería verse forzada a depender de métodos que no utiliza.
 
-Aunque Python no tiene "interfaces" explícitas, este principio es vital cuando diseñamos Clases Base Abstractas (ABCs) o definimos Protocolos. El objetivo es evitar crear una clase base gigante que obligue a sus hijas a implementar métodos que no tienen sentido para ellas.
+Aunque Python no tiene "interfaces" explícitas, este principio cobra especial relevancia al diseñar Clases Base Abstractas (ABCs) o Protocolos. Crear una clase base gigante que obligue a sus subclases a implementar métodos sin sentido para ellas es exactamente lo que se busca evitar: mejor definir contratos pequeños y específicos.
 
 ```python
 from abc import ABC, abstractmethod
@@ -184,6 +184,8 @@ class Robot(Trabajable):
 ## D — Dependency Inversion Principle (Principio de Inversión de Dependencias)
 
 Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones.
+
+Cuando una clase de alto nivel instancia directamente sus dependencias concretas, queda acoplada a una implementación específica —difícil de testear, difícil de cambiar. La inversión de dependencias rompe ese acoplamiento: en lugar de crear la dependencia, la clase la recibe desde afuera (inyección de dependencia), dependiendo de una abstracción que puede tomar cualquier forma concreta.
 
 ```python
 # ❌ Viola DIP: depende de implementación concreta

@@ -1,14 +1,14 @@
 # Excepciones
 
-Las excepciones son el mecanismo que usa Python para manejar situaciones anómalas durante la ejecución. En el paradigma orientado a objetos, las excepciones son **objetos**: instancias de clases que forman una jerarquía de herencia.
+Python maneja las situaciones anómalas durante la ejecución mediante excepciones. En el paradigma orientado a objetos, estas son **objetos**: instancias de clases que forman una jerarquía de herencia.
 
-Lejos de ser un recurso de "último momento", el manejo de excepciones es parte integral del **diseño**. Bertrand Meyer lo formalizó en el concepto de *Design by Contract*: cada método tiene precondiciones (qué espera recibir) y postcondiciones (qué garantiza producir). Las excepciones son el instrumento para comunicar que ese contrato fue violado.
+Lejos de ser un recurso de "último momento", el manejo de excepciones es parte integral del **diseño**. Bertrand Meyer formalizó esta idea en el concepto de *Design by Contract*: cada método tiene precondiciones (qué espera recibir) y postcondiciones (qué garantiza producir); las excepciones son el instrumento para comunicar que ese contrato fue violado.
 
-> **En la práctica:** en proyectos reales, las excepciones mal diseñadas son una fuente constante de bugs difíciles de rastrear. Una excepción genérica como `Exception("algo salió mal")` no le dice nada a quien la captura. Una excepción bien diseñada como `StockInsuficienteError` es autodocumentada y le permite a quien llama tomar decisiones informadas.
+> **En la práctica:** en proyectos reales, las excepciones mal diseñadas son una fuente constante de bugs difíciles de rastrear. Una excepción genérica como `Exception("algo salió mal")` nada le dice a quien la captura; en cambio, una como `StockInsuficienteError` es autodocumentada y le permite a quien llama tomar decisiones informadas.
 
 ## Excepciones Built-in Principales
 
-Python incluye una jerarquía de excepciones. Todas heredan de `BaseException`, pero en código de aplicación trabajás casi siempre con subclases de `Exception`:
+Python incluye una jerarquía de excepciones integrada. Todas heredan de `BaseException`, aunque en código de aplicación trabajás casi siempre con subclases de `Exception`:
 
 ```text
 BaseException
@@ -49,7 +49,7 @@ finally:
     # se ejecuta siempre, con o sin excepción (ideal para liberar recursos)
 ```
 
-El bloque `else` es útil para separar "la operación exitosa" del bloque `try`, dejando este último solo para el manejo de errores. El bloque `finally` es ideal para cerrar archivos, conexiones a bases de datos, etc.
+El bloque `else` separa con claridad "la operación exitosa" del bloque `try`, que queda reservado exclusivamente para el manejo de errores. Por su parte, `finally` es ideal para liberar recursos: cerrar archivos, conexiones a bases de datos, etc.
 
 ## Uso de excepciones built-in en una clase de dominio
 
@@ -115,7 +115,7 @@ finally:
 
 ## Excepciones Personalizadas
 
-Las excepciones built-in son suficientes para errores de programación: un `TypeError` o `ValueError` son claros. Pero para **reglas de negocio** propias de tu dominio, lo correcto es definir excepciones propias.
+Para errores de programación —un `TypeError` o un `ValueError`— las excepciones built-in son suficientes. Cuando se trata de **reglas de negocio** propias del dominio, sin embargo, lo correcto es definir excepciones propias.
 
 **¿Por qué crear excepciones propias?**
 

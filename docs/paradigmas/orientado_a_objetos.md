@@ -4,9 +4,9 @@
 
 Grady Booch, uno de los referentes del campo, la define como *"una forma de programación en la cual los programas son organizados como una colección de objetos que cooperan, cada uno de los cuales es una instancia de alguna clase, y las clases son miembros de una jerarquía de clases relacionadas por relaciones de herencia."*
 
-El cambio fundamental respecto al paradigma estructurado es dónde ponés el foco: en lugar de pensar en **verbos** (funciones, acciones), pensás en **sustantivos** (objetos, entidades). En lugar de preguntarte *"¿qué pasos necesito para resolver esto?"*, te preguntás *"¿qué entidades existen en este dominio y cómo se relacionan entre sí?"*
+Respecto al paradigma estructurado, el cambio fundamental no está en el lenguaje ni en la herramienta: está en el foco. En lugar de pensar en **verbos** (funciones, acciones), se piensa en **sustantivos** (objetos, entidades). En lugar de preguntarse *"¿qué pasos necesito para resolver esto?"*, la pregunta pasa a ser *"¿qué entidades existen en este dominio y cómo se relacionan entre sí?"*
 
-En la práctica, este cambio de mentalidad es el mayor desafío del curso. El código procedural te da resultados rápido; el diseño orientado a objetos te da código que escala, que es mantenible y que otros pueden entender sin leer cada línea.
+En la práctica, este desplazamiento conceptual es el mayor desafío del curso. Escribir código procedural produce resultados rápido; diseñar orientado a objetos produce código que escala, que es mantenible y que otros pueden entender sin leer cada línea.
 
 | | Paradigma Estructurado | Paradigma OOP |
 | --- | --- | --- |
@@ -17,13 +17,13 @@ En la práctica, este cambio de mentalidad es el mayor desafío del curso. El c�
 
 ## Análisis Orientado a Objetos (AOO)
 
-El análisis orientado a objetos es un método de análisis que examina los requisitos desde la perspectiva de las clases y los objetos que se encuentran en el vocabulario del dominio del problema. Consiste en analizar los requisitos observando el problema en términos de objetos.
+A diferencia del análisis estructurado —que parte de los procesos—, el análisis orientado a objetos examina los requisitos desde la perspectiva de las clases y los objetos que aparecen en el vocabulario del dominio. Consiste en comprender el problema en términos de objetos.
 
-Estos objetos representan entidades físicas o abstractas del mundo real relevantes para el dominio. El objetivo consiste en identificar los objetos, sus atributos, comportamientos y relaciones, sin enfocarse en cómo serán implementados.
+Esos objetos representan entidades físicas o abstractas del mundo real relevantes para el dominio. El objetivo es identificar los objetos, sus atributos, comportamientos y relaciones, sin enfocarse aún en cómo serán implementados.
 
 ## Técnica práctica: User Story Mapping
 
-El AOO puede sonar abstracto al principio: ¿cómo sabés qué objetos identificar en un sistema que todavía no existe? Una técnica accesible para empezar es el **User Story Mapping**, creada por Jeff Patton. No requiere conocimientos técnicos previos y es útil precisamente porque te obliga a pensar desde el usuario, no desde el código.
+El AOO puede sonar abstracto al principio: ¿cómo identificar qué objetos modelar en un sistema que todavía no existe? Una técnica accesible para empezar es el **User Story Mapping**, creada por Jeff Patton. No requiere conocimientos técnicos previos y es útil precisamente porque obliga a pensar desde el usuario, no desde el código.
 
 Un **user story** (historia de usuario) describe una funcionalidad desde la perspectiva de quien la usa, con el formato:
 
@@ -31,7 +31,7 @@ Un **user story** (historia de usuario) describe una funcionalidad desde la pers
 
 Por ejemplo: *"Como cliente, quiero agregar productos al carrito, para poder comprarlos juntos."*
 
-El **User Story Mapping** organiza esas historias en un mapa bidimensional:
+A partir de esas historias, el **User Story Mapping** las organiza en un mapa bidimensional:
 
 - **Eje horizontal (izquierda a derecha):** el flujo de uso del sistema, ordenado como lo haría un usuario real. Primero busca productos, después los agrega al carrito, después paga, etc.
 - **Eje vertical (arriba a abajo):** el nivel de detalle y prioridad. Las historias más importantes van arriba; las variantes y casos especiales, abajo.
@@ -46,13 +46,11 @@ El **User Story Mapping** organiza esas historias en un mapa bidimensional:
 
 ### ¿Por qué usar esta técnica?
 
-El valor del User Story Mapping en este contexto no es que sea la técnica definitiva de análisis —en proyectos reales se usa mucho más formal— sino que te da una forma concreta de pasar de *"tengo un problema"* a *"tengo una lista de objetos candidatos"* sin necesitar experiencia previa en diseño de software. En la práctica, hacer este ejercicio antes de escribir cualquier clase evita el error más común: modelar objetos que nadie usa o, peor, no modelar los que realmente importan.
+Su valor en este contexto no radica en ser la técnica definitiva de análisis —en proyectos reales se usa de forma mucho más rigurosa—, sino en que brinda una vía concreta para pasar de *"tengo un problema"* a *"tengo una lista de objetos candidatos"* sin necesitar experiencia previa en diseño de software. En la práctica, hacer este ejercicio antes de escribir cualquier clase evita el error más común: modelar objetos que nadie usa o, peor, omitir los que realmente importan.
 
 ## Diseño Orientado a Objetos (DOO)
 
-El diseño orientado a objetos es un método de diseño de software que abarca el proceso de descomposición orientada a objetos y una notación para representar modelos lógicos y físicos del sistema en diseño.
-
-Durante el DOO se toma el modelo de análisis obtenido en el AOO y se transforma en un modelo detallado de implementación.
+Una vez completado el AOO, el diseño orientado a objetos toma ese modelo de análisis y lo transforma en un modelo detallado de implementación. Para ello abarca el proceso de descomposición orientada a objetos y define una notación para representar los modelos lógicos y físicos del sistema en diseño.
 
 ![La pirámide del diseño orientado a objetos: desde el diseño de subsistemas hasta las responsabilidades de cada clase](../img/poo_diagrama.png)
 
@@ -60,7 +58,7 @@ Durante el DOO se toma el modelo de análisis obtenido en el AOO y se transforma
 
 El **Lenguaje de Modelado Unificado** (UML, *Unified Modeling Language*) es el estándar de la industria para representar visualmente el diseño de un sistema orientado a objetos. Dentro de UML, el **diagrama de clases** es el artefacto más usado en el DOO: permite comunicar la estructura del sistema —clases, atributos, métodos y relaciones— antes de escribir una sola línea de código.
 
-> En la práctica, no necesitás diagramar absolutamente todo. Un diagrama de clases liviano con las entidades principales y sus relaciones alcanza para validar el diseño con el equipo, detectar problemas de acoplamiento y servir de documentación viva.
+> En la práctica, no necesitás diagramar absolutamente todo. Un diagrama liviano con las entidades principales y sus relaciones alcanza para validar el diseño con el equipo, detectar problemas de acoplamiento y servir de documentación viva.
 
 ### Notación básica de una clase
 
@@ -97,7 +95,7 @@ Las relaciones capturan cómo se vinculan las clases. En un diagrama liviano us�
 | **Agregación** | `A ◇──── B` | A agrupa B; B puede existir solo | `Inventario` agrupa `Producto` |
 | **Herencia** | `A ──▷ B` | A es un tipo de B | `Moto` es un `Vehículo` |
 
-> La diferencia entre composición y agregación suele generar dudas. La regla práctica: si destruís el contenedor y el contenido pierde sentido por sí solo, es composición. Si el contenido puede existir independientemente, es agregación. En la mayoría de los diseños que hacemos en la materia, la distinción no es crítica — lo que importa es que quede claro que una clase *contiene* a otra.
+> La diferencia entre composición y agregación suele generar dudas. La regla práctica: si destruís el contenedor y el contenido pierde sentido por sí solo, es composición; si puede existir independientemente, es agregación. En la mayoría de los diseños que hacemos en la materia, la distinción no es crítica — lo que importa es que quede claro que una clase *contiene* a otra.
 
 ### Ejemplo completo: sistema de pedidos
 
