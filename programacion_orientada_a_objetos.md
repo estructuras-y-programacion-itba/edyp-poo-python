@@ -36,6 +36,8 @@ Python es multiparadigma: soporta el paradigma estructurado, el orientado a obje
 
 ## El Paradigma Estructurado
 
+En la materia Informática General, usamos Python para desarrollar nuestros progamas aplicando el paradigma estructurado. Vamos a definirlo para entener que es lo que hicimos hasta ahora y luego como se diferencia del paradigma orientado a objetos.
+
 La programación estructurada es un paradigma orientado a mejorar la claridad, calidad y tiempo de desarrollo de un programa, recurriendo únicamente a funciones y a tres estructuras de control básicas: secuencia, selección (`if` y `switch`) e iteración (bucles `for` y `while`).
 
 ![Estructuras de control fundamentales: secuencia, selección e iteración](img/espagueti.png)
@@ -88,7 +90,13 @@ def procesar_pedido(usuario, items, descuento):
 
 ---
 
-## Acoplamiento
+## Acoplamiento y Cohesión
+
+Antes de entrar de lleno en el paradigma orientado a objetos, es fundamental entender dos conceptos que van a guiar todas tus decisiones de diseño: **acoplamiento** y **cohesión**. No son exclusivos de la POO — aplican a cualquier código — pero en cuanto empezás a diseñar clases, se vuelven el criterio más práctico para evaluar si tu diseño es bueno o no.
+
+¿Por qué estudiarlos ahora, antes de ver clases en detalle? Porque el paradigma estructurado ya te enseña a escribir funciones, y con funciones también podés tener alto o bajo acoplamiento, alta o baja cohesión. Entender el problema en un contexto que ya conocés te va a hacer mucho más fácil aplicarlo después al diseño orientado a objetos. En la práctica, la mayoría de los problemas de diseño que vemos en los trabajos prácticos se reducen a uno de estos dos conceptos mal aplicados.
+
+### Acoplamiento
 
 El acoplamiento es el grado en que las clases de un programa dependen unas de otras. Si para hacer cambios en una clase es necesario hacer cambios en otra, existe acoplamiento entre ambas.
 
@@ -127,7 +135,7 @@ class OrderProcessorV2:
 # Ahora es fácil cambiar el gestor de archivos sin tocar OrderProcessorV2
 ```
 
-## Cohesión
+### Cohesión
 
 Cohesión es lo contrario a acoplamiento. Algo está cohesionado si tiene sentido y una dirección común.
 
