@@ -230,13 +230,120 @@ Durante el DOO se toma el modelo de análisis obtenido en el AOO y se transforma
 
 ![La pirámide del diseño orientado a objetos: desde el diseño de subsistemas hasta las responsabilidades de cada clase](img/poo_diagrama.png)
 
-### Beneficios del ADOO
+### Diagramas de Clase UML
 
-- Aumenta la modularidad y la facilidad de mantenimiento del software al fomentar la creación de componentes pequeños y reutilizables.
-- Proporciona una representación abstracta de alto nivel del sistema.
-- Promueve la reutilización de objetos, lo que reduce el código necesario y mejora la calidad.
-- Facilita el trabajo en equipo con un lenguaje y método comunes.
-- Ayuda a crear sistemas escalables que se adapten a las cambiantes necesidades.
+El **Lenguaje de Modelado Unificado** (UML, *Unified Modeling Language*) es el estándar de la industria para representar visualmente el diseño de un sistema orientado a objetos. Dentro de UML, el **diagrama de clases** es el artefacto más usado en el DOO: permite comunicar la estructura del sistema —clases, atributos, métodos y relaciones— antes de escribir una sola línea de código.
+
+> En la práctica, no necesitás diagramar absolutamente todo. Un diagrama de clases liviano con las entidades principales y sus relaciones alcanza para validar el diseño con el equipo, detectar problemas de acoplamiento y servir de documentación viva.
+
+#### Notación básica de una clase
+
+Cada clase se representa como un rectángulo dividido en tres compartimentos:
+
+```text
+┌──────────────────────┐
+│      NombreClase     │  ← nombre de la clase (en negrita o CamelCase)
+├──────────────────────┤
+│ - atributo: tipo     │  ← atributos con visibilidad y tipo
+│ # otro: tipo         │
+├──────────────────────┤
+│ + metodo(): tipo     │  ← métodos con visibilidad, parámetros y retorno
+│ - _helper(): None    │
+└──────────────────────┘
+```
+
+Los **modificadores de visibilidad** indican el nivel de acceso:
+
+| Símbolo | Visibilidad | Equivalente en Python |
+| --- | --- | --- |
+| `+` | Público | Sin prefijo: `self.nombre` |
+| `#` | Protegido | Un guión bajo: `self._nombre` |
+| `-` | Privado | Dos guiones bajos: `self.__nombre` |
+
+#### Relaciones entre clases
+
+Las relaciones capturan cómo se vinculan las clases. En un diagrama liviano usás principalmente estas cuatro:
+
+| Relación | Símbolo | Semántica | Ejemplo |
+| --- | --- | --- | --- |
+| **Asociación** | `A ──── B` | A usa o referencia a B | `Pedido` usa `Cliente` |
+| **Composición** | `A ◆──── B` | A contiene B; B no existe sin A | `Auto` contiene `Motor` |
+| **Agregación** | `A ◇──── B` | A agrupa B; B puede existir solo | `Inventario` agrupa `Producto` |
+| **Herencia** | `A ──▷ B` | A es un tipo de B | `Moto` es un `Vehículo` |
+
+> La diferencia entre composición y agregación suele generar dudas. La regla práctica: si destruís el contenedor y el contenido pierde sentido por sí solo, es composición. Si el contenido puede existir independientemente, es agregación. En la mayoría de los diseños que hacemos en la materia, la distinción no es crítica — lo que importa es que quede claro que una clase *contiene* a otra.
+
+#### Ejemplo completo: sistema de pedidos
+
+El siguiente diagrama modela las clases del ejemplo de acoplamiento visto antes:
+
+```text
+         ┌─────────────────────────┐
+         │        Cliente          │
+         ├─────────────────────────┤
+         │ - nombre: str           │
+         │ - email: str            │
+         ├─────────────────────────┤
+         │ + get_nombre(): str     │
+         └────────────┬────────────┘
+                      │ 1
+                      │ asociación
+                      │ *
+         ┌────────────▼────────────┐         ┌─────────────────────────┐
+         │         Pedido          │ ◆─────── │        Producto         │
+         ├─────────────────────────┤  1    *  ├─────────────────────────┤
+         │ - id: int               │          │ - nombre: str           │
+         │ - items: list[Producto] │          │ - precio: float         │
+         ├─────────────────────────┤          │ - stock: int            │
+         │ + agregar(p: Producto)  │          ├─────────────────────────┤
+         │ + calcular_total(): float│         │ + vender(cant: int)     │
+         └─────────────────────────┘          └─────────────────────────┘
+```
+
+Las multiplicidades (`1`, `*`, `0..1`) sobre las líneas indican cuántas instancias participan en cada lado de la relación:
+
+| Multiplicidad | Significado |
+| --- | --- |
+| `1` | Exactamente uno |
+| `*` o `0..*` | Cero o más |
+| `1..*` | Uno o más |
+| `0..1` | Opcional (cero o uno) |
+
+#### Herramientas recomendadas
+
+Para diagramar sin salir del flujo de trabajo, estas opciones son las más prácticas:
+
+- **[Mermaid](https://mermaid.js.org/)**: se escribe como código dentro de Markdown y renderiza automáticamente en GitHub, Notion y VS Code. Ideal para mantener el diagrama junto al código.
+- **[draw.io / diagrams.net](https://app.diagrams.net/)**: editor visual gratuito, exporta a PNG/SVG. Útil para diagramas más elaborados.
+- **[PlantUML](https://plantuml.com/)**: sintaxis textual, muy expresiva, integrable con pipelines de documentación.
+
+El mismo diagrama del ejemplo anterior en sintaxis Mermaid se vería así:
+
+```mermaid
+classDiagram
+    class Cliente {
+        - nombre: str
+        - email: str
+        + get_nombre() str
+    }
+
+    class Pedido {
+        - id: int
+        - items: list
+        + agregar(p: Producto)
+        + calcular_total() float
+    }
+
+    class Producto {
+        - nombre: str
+        - precio: float
+        - stock: int
+        + vender(cant: int)
+    }
+
+    Cliente "1" --> "*" Pedido : realiza
+    Pedido "1" *-- "*" Producto : contiene
+```
 
 ---
 
