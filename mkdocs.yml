@@ -85,8 +85,16 @@ plugins:
 
 nav:
   - Inicio: index.md
-  - Apuntes:
-      - Programación Orientada a Objetos: programacion_orientada_a_objetos.md
+  - Paradigmas:
+      - Introducción y Paradigma Estructurado: paradigmas/introduccion.md
+      - El Paradigma Orientado a Objetos: paradigmas/orientado_a_objetos.md
+  - Modelo de Objetos:
+      - Elementos del Modelo: modelo/elementos.md
+      - Principios SOLID: modelo/solid.md
+  - Prácticas:
+      - Excepciones: practicas/excepciones.md
+      - Testing con pytest: practicas/testing.md
+      - Checklist y Fuentes: practicas/checklist.md
 
 extra:
   social:
