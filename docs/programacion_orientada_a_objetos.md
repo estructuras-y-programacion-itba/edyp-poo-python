@@ -5,22 +5,6 @@
 
 ---
 
-## Índice
-
-1. [¿Qué es un Paradigma de Programación?](#qué-es-un-paradigma-de-programación)
-2. [El Paradigma Estructurado](#el-paradigma-estructurado)
-3. [Acoplamiento y Cohesión](#acoplamiento)
-4. [¿Qué es lo ideal?](#qué-es-lo-ideal)
-5. [El Paradigma Orientado a Objetos](#el-paradigma-orientado-a-objetos)
-6. [Los Cuatro Pilares del Modelo de Objetos](#elementos-del-modelo-de-objetos)
-7. [Principios SOLID](#principios-solid)
-8. [Excepciones](#excepciones)
-9. [Testing de Clases con pytest](#testing-de-clases-con-pytest)
-10. [Checklist: Antes de Entregar](#checklist-antes-de-entregar)
-11. [Fuentes](#fuentes)
-
----
-
 ## ¿Qué es un paradigma de programación?
 
 Un paradigma de programación es una manera de organizar y estructurar el código para resolver problemas. Define qué abstracciones tenés disponibles, cómo pensás el diseño y qué estilo de soluciones producís. No es solo una cuestión de sintaxis: es una forma de razonar sobre los problemas.

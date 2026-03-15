@@ -30,6 +30,9 @@ theme:
     - navigation.sections       # Agrupa ítems en el sidebar
     - navigation.expand         # Expande secciones por defecto
     - navigation.top            # Botón "volver arriba"
+    - navigation.footer         # Links "anterior / siguiente" al pie de cada página
+    - toc.integrate             # Integra el índice de secciones en el sidebar izquierdo
+    - toc.follow                # El sidebar sigue el scroll de la página
     - search.suggest            # Autocompletado en búsqueda
     - search.highlight          # Resalta términos buscados
     - content.code.copy         # Botón para copiar snippets
