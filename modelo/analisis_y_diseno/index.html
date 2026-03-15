@@ -12,7 +12,7 @@
         <meta name="author" content="Cátedra EDyP — ITBA">
       
       
-        <link rel="canonical" href="https://cmaceira-itba.github.io/edyp-poo-python/modelo/orientado_a_objetos/">
+        <link rel="canonical" href="https://cmaceira-itba.github.io/edyp-poo-python/modelo/analisis_y_diseno/">
       
       
         <link rel="prev" href="../../introduccion/cambio_de_mentalidad/">
@@ -29,7 +29,7 @@
     
     
       
-        <title>El Paradigma Orientado a Objetos - POO en Python — ITBA</title>
+        <title>Análisis y Diseño OO - POO en Python — ITBA</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#el-paradigma-orientado-a-objetos" class="md-skip">
+        <a href="#analisis-y-diseno-orientado-a-objetos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              El Paradigma Orientado a Objetos
+              Análisis y Diseño OO
             
           </span>
         </div>
@@ -661,7 +661,7 @@
   <span class="md-ellipsis">
     
   
-    El Paradigma Orientado a Objetos
+    Análisis y Diseño OO
   
 
     
@@ -679,7 +679,7 @@
   <span class="md-ellipsis">
     
   
-    El Paradigma Orientado a Objetos
+    Análisis y Diseño OO
   
 
     
@@ -703,17 +703,6 @@
       Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#programacion-orientada-a-objetos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Programación Orientada a Objetos
-      
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#analisis-orientado-a-objetos-aoo" class="md-nav__link">
@@ -1537,42 +1526,8 @@
   
 
 
-<h1 id="el-paradigma-orientado-a-objetos">El Paradigma Orientado a Objetos</h1>
-<h2 id="programacion-orientada-a-objetos">Programación Orientada a Objetos</h2>
-<p>Grady Booch, uno de los referentes del campo, la define como <em>"una forma de programación en la cual los programas son organizados como una colección de objetos que cooperan, cada uno de los cuales es una instancia de alguna clase, y las clases son miembros de una jerarquía de clases relacionadas por relaciones de herencia."</em></p>
-<p>Respecto al paradigma estructurado, el cambio fundamental no está en el lenguaje ni en la herramienta: está en el foco. En lugar de pensar en <strong>verbos</strong> (funciones, acciones), se piensa en <strong>sustantivos</strong> (objetos, entidades). En lugar de preguntarse <em>"¿qué pasos necesito para resolver esto?"</em>, la pregunta pasa a ser <em>"¿qué entidades existen en este dominio y cómo se relacionan entre sí?"</em></p>
-<p>En la práctica, este desplazamiento conceptual es el mayor desafío del curso. Escribir código procedural produce resultados rápido; diseñar orientado a objetos produce código que escala, que es mantenible y que otros pueden entender sin leer cada línea.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Paradigma Estructurado</th>
-<th>Paradigma OOP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Unidad fundamental</td>
-<td>Función/Procedimiento</td>
-<td>Objeto</td>
-</tr>
-<tr>
-<td>Dato y comportamiento</td>
-<td>Separados</td>
-<td>Unidos en la misma entidad</td>
-</tr>
-<tr>
-<td>Reuso</td>
-<td>Copy-paste, funciones genéricas</td>
-<td>Herencia, Composición</td>
-</tr>
-<tr>
-<td>Complejidad</td>
-<td>Crece con el tamaño del programa</td>
-<td>Se gestiona con encapsulación</td>
-</tr>
-</tbody>
-</table>
+<h1 id="analisis-y-diseno-orientado-a-objetos">Análisis y Diseño Orientado a Objetos</h1>
+<p>Entender qué es la POO es solo el primer paso. El desafío real está en aplicarla: dado un problema, ¿cómo sabés qué objetos modelar? ¿Cómo pasás de un enunciado a un conjunto de clases con responsabilidades claras? Para eso existen dos disciplinas complementarias: el <strong>Análisis Orientado a Objetos</strong> y el <strong>Diseño Orientado a Objetos</strong>.</p>
 <h2 id="analisis-orientado-a-objetos-aoo">Análisis Orientado a Objetos (AOO)</h2>
 <p>A diferencia del análisis estructurado —que parte de los procesos—, el análisis orientado a objetos examina los requisitos desde la perspectiva de las clases y los objetos que aparecen en el vocabulario del dominio. Consiste en comprender el problema en términos de objetos.</p>
 <p>Esos objetos representan entidades físicas o abstractas del mundo real relevantes para el dominio. El objetivo es identificar los objetos, sus atributos, comportamientos y relaciones, sin enfocarse aún en cómo serán implementados.</p>
