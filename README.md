@@ -22,7 +22,7 @@ El material principal está en [`programacion_orientada_a_objetos.md`](programac
 
 ## Estructura del repositorio
 
-```
+```text
 .
 ├── docs/                                  # Fuentes del sitio MkDocs
 │   ├── index.md                           # Página de inicio (este README)
@@ -81,7 +81,7 @@ Eso es todo. `uv` crea automáticamente un entorno virtual en `.venv/` dentro de
 ### ¿Por qué `uv` en lugar de `pip`?
 
 | | `pip` + `venv` | `uv` |
-|---|---|---|
+| --- | --- | --- |
 | Crear entorno virtual | `python -m venv .venv` | automático con `uv sync` |
 | Instalar paquete | `pip install pytest` | `uv add pytest` |
 | Instalar desde lockfile | `pip install -r requirements.txt` | `uv sync` |

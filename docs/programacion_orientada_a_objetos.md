@@ -158,11 +158,13 @@ Teniendo en cuenta todo lo expuesto, hay que buscar el balance que garantiza may
 ![Cuadrante de acoplamiento y cohesión: el objetivo es bajo acoplamiento y alta cohesión](img/acoplamiento_cohesion_cuadrante.png)
 
 Un bajo acoplamiento nos garantiza:
+
 - Mejorar la mantenibilidad de los módulos del software, facilitar los cambios sin tener que revisar todos los módulos dependientes.
 - Mejorar la reutilización de las unidades del software.
 - Facilitar las pruebas de cada módulo, al ser más independientes.
 
 Por otro lado, una alta cohesión nos permite:
+
 - Tener un código más entendible, legible y coherente.
 - Mejorar la reutilización, al tener todo lo relacionado con una cosa, en esa cosa.
 - Mejorar el mantenimiento del software, ya que todo está perfectamente localizado.
@@ -181,7 +183,7 @@ El cambio fundamental respecto al paradigma estructurado es dónde ponés el foc
 En la práctica, este cambio de mentalidad es el mayor desafío del curso. El código procedural te da resultados rápido; el diseño orientado a objetos te da código que escala, que es mantenible y que otros pueden entender sin leer cada línea.
 
 | | Paradigma Estructurado | Paradigma OOP |
-|---|---|---|
+| --- | --- | --- |
 | Unidad fundamental | Función/Procedimiento | Objeto |
 | Dato y comportamiento | Separados | Unidos en la misma entidad |
 | Reuso | Copy-paste, funciones genéricas | Herencia, Composición |
@@ -289,12 +291,12 @@ La abstracción y el encapsulamiento son conceptos complementarios. La abstracci
 
 ![El encapsulamiento oculta los detalles de implementación de un objeto](img/encapsulamiento.png)
 
-**Convenciones en Python**
+#### Convenciones en Python
 
 Python no tiene modificadores de acceso como `private` o `protected`, pero tiene convenciones que todos los desarrolladores respetan:
 
 | Convención | Ejemplo | Significado |
-|---|---|---|
+| --- | --- | --- |
 | Sin prefijo | `self.nombre` | Público: accesible desde cualquier lugar |
 | Un guión bajo | `self._saldo` | "Protegido": convención de que es interno, no parte de la API pública |
 | Dos guiones bajos | `self.__saldo` | "Muy privado": Python aplica *name mangling* para dificultar el acceso externo |
@@ -410,6 +412,7 @@ print(reporte.generar(inv))
 La abstracción es buena, pero en cualquier sistema real aparecen decenas de abstracciones que necesitan relacionarse entre sí. La jerarquía es la forma en que organizamos esas relaciones de manera que el sistema siga siendo comprensible.
 
 Las dos jerarquías fundamentales en POO son:
+
 - **Estructura de clases** (jerarquía "es-un"): una subclase *es un* tipo específico de su clase padre. Se implementa con **herencia**.
 - **Estructura de objetos** (jerarquía "tiene-un"): un objeto *contiene* o *usa* a otro. Se implementa con **composición**.
 
@@ -698,7 +701,7 @@ Lejos de ser un recurso de "último momento", el manejo de excepciones es parte 
 
 Python incluye una jerarquía de excepciones. Todas heredan de `BaseException`, pero en código de aplicación trabajás casi siempre con subclases de `Exception`:
 
-```
+```text
 BaseException
  ├── SystemExit           → sys.exit() lo lanza, no lo capturés
  ├── KeyboardInterrupt    → Ctrl+C, tampoco lo capturés
@@ -714,7 +717,7 @@ BaseException
 ```
 
 | Excepción | Cuándo usarla |
-|---|---|
+| --- | --- |
 | `ValueError` | El argumento tiene el tipo correcto pero un valor semánticamente inválido |
 | `TypeError` | El argumento tiene el tipo incorrecto |
 | `AttributeError` | Se accede a un atributo que no existe en el objeto |
@@ -806,13 +809,14 @@ finally:
 Las excepciones built-in son suficientes para errores de programación: un `TypeError` o `ValueError` son claros. Pero para **reglas de negocio** propias de tu dominio, lo correcto es definir excepciones propias.
 
 **¿Por qué crear excepciones propias?**
+
 - **Semántica**: `StockInsuficienteError` comunica el problema sin necesidad de leer el mensaje.
 - **Captura selectiva**: quien llama puede hacer `except StockInsuficienteError` para manejar ese caso específico.
 - **Información adicional**: podés agregar atributos con el contexto relevante.
 
 **Patrón recomendado:** definí una excepción base por módulo o dominio, y excepciones específicas que hereden de ella:
 
-```
+```text
 Exception
  └── InventarioError                ← excepción base del dominio
       ├── StockInsuficienteError    ← error específico con atributos propios
@@ -900,6 +904,7 @@ Un programa sin tests es un programa que no sabés si funciona. En POO, los test
 Un **test unitario** testea **una sola unidad** de código en aislamiento. En POO, la unidad es una clase. El objetivo es verificar que sus métodos se comportan correctamente dado un estado inicial y unos inputs determinados.
 
 Lo que **no** hace un test unitario:
+
 - No testea cómo dos clases interactúan entre sí (eso es un test de integración).
 - No testea la base de datos, la red ni el sistema de archivos.
 - No testea lógica de otras clases relacionadas.
@@ -918,7 +923,7 @@ pip install pytest pytest-mock
 
 **Estructura de archivos recomendada:**
 
-```
+```text
 mi_proyecto/
 ├── src/
 │   ├── cuenta_bancaria.py
@@ -1062,12 +1067,13 @@ class TestCuentaBancariaConFixture:
 Cuando una clase depende de otra, no querés que los tests de la primera fallen por culpa de la segunda. La solución es **mockear** la dependencia: reemplazarla con un objeto simulado.
 
 **¿Cuándo mockear?**
+
 - Cuando tu clase usa otra clase de dominio (para aislar la unidad bajo test).
 - Cuando la dependencia conecta con recursos externos: bases de datos, APIs, sistema de archivos.
 - Cuando necesitás simular condiciones difíciles de reproducir (ej: una API que devuelve error 500).
 
 | Necesidad | Herramienta |
-|---|---|
+| --- | --- |
 | Reemplazar una clase entera con un objeto falso | `MagicMock(spec=MiClase)` |
 | Controlar qué retorna un método | `mock.metodo.return_value = valor` |
 | Simular que un método lanza una excepción | `mock.metodo.side_effect = MiError(...)` |
@@ -1208,8 +1214,8 @@ Antes de revisar ítem por ítem, vale la pena recordar los criterios generales 
 
 - Booch, G. *Object Oriented Analysis and Design with Applications*, 3rd Edition.
 - Martin, R. C. *Clean Code: A Handbook of Agile Software Craftsmanship*.
-- https://profile.es/blog/que-son-los-paradigmas-de-programacion/
-- https://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada
-- https://www.disrupciontecnologica.com/acoplamiento-y-cohesion/
-- https://refactoring.guru/refactoring/what-is-refactoring
-- https://www.geeksforgeeks.org/software-engineering/object-oriented-analysis-and-design/
+- <https://profile.es/blog/que-son-los-paradigmas-de-programacion/>
+- <https://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada>
+- <https://www.disrupciontecnologica.com/acoplamiento-y-cohesion/>
+- <https://refactoring.guru/refactoring/what-is-refactoring>
+- <https://www.geeksforgeeks.org/software-engineering/object-oriented-analysis-and-design/>

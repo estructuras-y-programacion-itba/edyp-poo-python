@@ -1,0 +1,13 @@
+# Configuración de markdownlint
+default: true
+
+# Ignorar largo de línea (MD013) porque es molesto en archivos de texto largo
+MD013: false
+
+# Permitir énfasis como encabezado si es solo una convención interna (MD036)
+# Pero lo ideal es arreglarlo si realmente debería ser un H3/H4
+MD036: false
+
+# MD024: Permitir encabezados duplicados si son en secciones distintas
+MD024:
+  siblings_only: true
