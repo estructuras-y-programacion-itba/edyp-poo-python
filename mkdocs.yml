@@ -90,7 +90,7 @@ nav:
       - ¿Qué es la POO?: introduccion/que_es_poo.md
       - El Cambio de Mentalidad: introduccion/cambio_de_mentalidad.md
   - Modelo de Objetos:
-      - El Paradigma Orientado a Objetos: modelo/orientado_a_objetos.md
+      - Análisis y Diseño OO: modelo/analisis_y_diseno.md
       - Clases y Objetos: modelo/clases_y_objetos.md
       - Elementos del Modelo: modelo/elementos.md
       - Relaciones entre Clases: modelo/relaciones.md

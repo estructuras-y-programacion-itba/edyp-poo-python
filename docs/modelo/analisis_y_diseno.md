@@ -1,19 +1,6 @@
-# El Paradigma Orientado a Objetos
+# Análisis y Diseño Orientado a Objetos
 
-## Programación Orientada a Objetos
-
-Grady Booch, uno de los referentes del campo, la define como *"una forma de programación en la cual los programas son organizados como una colección de objetos que cooperan, cada uno de los cuales es una instancia de alguna clase, y las clases son miembros de una jerarquía de clases relacionadas por relaciones de herencia."*
-
-Respecto al paradigma estructurado, el cambio fundamental no está en el lenguaje ni en la herramienta: está en el foco. En lugar de pensar en **verbos** (funciones, acciones), se piensa en **sustantivos** (objetos, entidades). En lugar de preguntarse *"¿qué pasos necesito para resolver esto?"*, la pregunta pasa a ser *"¿qué entidades existen en este dominio y cómo se relacionan entre sí?"*
-
-En la práctica, este desplazamiento conceptual es el mayor desafío del curso. Escribir código procedural produce resultados rápido; diseñar orientado a objetos produce código que escala, que es mantenible y que otros pueden entender sin leer cada línea.
-
-| | Paradigma Estructurado | Paradigma OOP |
-| --- | --- | --- |
-| Unidad fundamental | Función/Procedimiento | Objeto |
-| Dato y comportamiento | Separados | Unidos en la misma entidad |
-| Reuso | Copy-paste, funciones genéricas | Herencia, Composición |
-| Complejidad | Crece con el tamaño del programa | Se gestiona con encapsulación |
+Entender qué es la POO es solo el primer paso. El desafío real está en aplicarla: dado un problema, ¿cómo sabés qué objetos modelar? ¿Cómo pasás de un enunciado a un conjunto de clases con responsabilidades claras? Para eso existen dos disciplinas complementarias: el **Análisis Orientado a Objetos** y el **Diseño Orientado a Objetos**.
 
 ## Análisis Orientado a Objetos (AOO)
 
