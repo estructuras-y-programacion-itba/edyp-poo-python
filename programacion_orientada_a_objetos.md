@@ -10,15 +10,14 @@
 1. [¿Qué es un Paradigma de Programación?](#qué-es-un-paradigma-de-programación)
 2. [El Paradigma Estructurado](#el-paradigma-estructurado)
 3. [Acoplamiento y Cohesión](#acoplamiento)
-4. [Código Limpio](#codigo-limpio)
-5. [Principios SOLID](#principios-solid)
-6. [¿Qué es lo ideal?](#qué-es-lo-ideal)
-7. [El Paradigma Orientado a Objetos](#el-paradigma-orientado-a-objetos)
-8. [Los Cuatro Pilares del Modelo de Objetos](#elementos-del-modelo-de-objetos)
-9. [Excepciones](#excepciones)
-10. [Testing de Clases con pytest](#testing-de-clases-con-pytest)
-11. [Checklist: Antes de Entregar](#checklist-antes-de-entregar)
-12. [Fuentes](#fuentes)
+4. [Principios SOLID](#principios-solid)
+5. [¿Qué es lo ideal?](#qué-es-lo-ideal)
+6. [El Paradigma Orientado a Objetos](#el-paradigma-orientado-a-objetos)
+7. [Los Cuatro Pilares del Modelo de Objetos](#elementos-del-modelo-de-objetos)
+8. [Excepciones](#excepciones)
+9. [Testing de Clases con pytest](#testing-de-clases-con-pytest)
+10. [Checklist: Antes de Entregar](#checklist-antes-de-entregar)
+11. [Fuentes](#fuentes)
 
 ---
 
@@ -165,22 +164,6 @@ class ReportGenerator:
 ```
 
 Un código altamente cohesionado tiende a ser más autocontenido, con menos dependencias y más fácil de mantener.
-
----
-
-## Codigo Limpio
-
-### El código limpio es obvio para otros programadores
-Los nombres de variables pobremente elegidos, clases y métodos extensos y números mágicos hacen del código algo desprolijo y difícil de comprender.
-
-### El código limpio no tiene líneas duplicadas
-Cada vez que hacés un cambio en código duplicado tenés que repetirlo en cada copia. Esto induce a errores y dificulta la mantenibilidad.
-
-### El código limpio tiene la menor cantidad de clases
-Menos código facilita el mantenimiento y reduce la cantidad de bugs. El diseño debe ser el mínimo para el propósito.
-
-### El código limpio pasa todos los tests
-Hay que probar nuestro código y asegurarse de que cada entrega satisface todos los tests.
 
 ---
 
@@ -1196,6 +1179,15 @@ class TestProcesadorPedido:
 ## Checklist: Antes de Entregar
 
 Un buen diseño orientado a objetos no es solo que el código funcione — es que sea mantenible, legible y correcto por diseño. Usá esta lista como guía antes de entregar cualquier trabajo práctico.
+
+### Código Limpio
+
+Antes de revisar ítem por ítem, vale la pena recordar los criterios generales de código limpio que aplican a todo el trabajo:
+
+- **Es obvio para otros programadores.** Los nombres de variables pobremente elegidos, clases y métodos extensos, y números mágicos hacen del código algo desprolijo y difícil de comprender.
+- **No tiene líneas duplicadas.** Cada vez que hacés un cambio en código duplicado tenés que repetirlo en cada copia. Esto induce a errores y dificulta la mantenibilidad.
+- **Tiene la menor cantidad de clases necesarias.** Menos código facilita el mantenimiento y reduce la cantidad de bugs. El diseño debe ser el mínimo para el propósito.
+- **Pasa todos los tests.** Hay que probar nuestro código y asegurarse de que cada entrega satisface todos los tests.
 
 ### Diseño y Responsabilidad
 
