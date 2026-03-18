@@ -116,7 +116,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -126,7 +126,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -159,6 +159,11 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Buscar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartir" aria-label="Compartir" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
@@ -257,7 +262,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/edyp-poo-python/modelo/analisis_y_diseno/" class="md-tabs__link">
+        <a href="/edyp-poo-python/conceptos_basicos/analisis_y_diseno/" class="md-tabs__link">
           
   
   
@@ -277,7 +282,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/edyp-poo-python/conceptos/abstraccion/" class="md-tabs__link">
+        <a href="/edyp-poo-python/principios/abstraccion/" class="md-tabs__link">
           
   
   
@@ -317,11 +322,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="/edyp-poo-python/modelo/solid/" class="md-tabs__link">
+        <a href="/edyp-poo-python/buenas_practicas/type_hinting/" class="md-tabs__link">
           
   
   
-  Diseño y Buenas Prácticas
+  Buenas Prácticas
 
         </a>
       </li>
@@ -337,11 +342,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="/edyp-poo-python/practicas/enums/" class="md-tabs__link">
+        <a href="/edyp-poo-python/buenas_practicas/solid/" class="md-tabs__link">
           
   
   
-  Prácticas
+  Para Ir Más Lejos
 
         </a>
       </li>
@@ -369,9 +374,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="/edyp-poo-python/." title="POO en Python — ITBA" class="md-nav__button md-logo" aria-label="POO en Python — ITBA" data-md-component="logo">
       
@@ -629,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/modelo/analisis_y_diseno/" class="md-nav__link">
+      <a href="/edyp-poo-python/conceptos_basicos/analisis_y_diseno/" class="md-nav__link">
         
   
   
@@ -657,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/modelo/clases_y_objetos/" class="md-nav__link">
+      <a href="/edyp-poo-python/conceptos_basicos/clases_y_objetos/" class="md-nav__link">
         
   
   
@@ -685,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/modelo/elementos/" class="md-nav__link">
+      <a href="/edyp-poo-python/conceptos_basicos/elementos/" class="md-nav__link">
         
   
   
@@ -713,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/modelo/relaciones/" class="md-nav__link">
+      <a href="/edyp-poo-python/conceptos_basicos/relaciones/" class="md-nav__link">
         
   
   
@@ -721,6 +724,34 @@
     
   
     Relaciones entre Clases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/edyp-poo-python/diseno/composicion_vs_herencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composición vs. Herencia
   
 
     
@@ -802,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/conceptos/abstraccion/" class="md-nav__link">
+      <a href="/edyp-poo-python/principios/abstraccion/" class="md-nav__link">
         
   
   
@@ -830,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/conceptos/encapsulamiento/" class="md-nav__link">
+      <a href="/edyp-poo-python/principios/encapsulamiento/" class="md-nav__link">
         
   
   
@@ -858,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/conceptos/herencia/" class="md-nav__link">
+      <a href="/edyp-poo-python/principios/herencia/" class="md-nav__link">
         
   
   
@@ -886,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/conceptos/polimorfismo/" class="md-nav__link">
+      <a href="/edyp-poo-python/principios/polimorfismo/" class="md-nav__link">
         
   
   
@@ -1091,7 +1122,7 @@
   <span class="md-ellipsis">
     
   
-    Diseño y Buenas Prácticas
+    Buenas Prácticas
   
 
     
@@ -1107,7 +1138,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Diseño y Buenas Prácticas
+    Buenas Prácticas
   
 
           </label>
@@ -1120,14 +1151,14 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/modelo/solid/" class="md-nav__link">
+      <a href="/edyp-poo-python/buenas_practicas/type_hinting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Principios SOLID
+    Type Hinting
   
 
     
@@ -1148,14 +1179,98 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/diseno/composicion_vs_herencia/" class="md-nav__link">
+      <a href="/edyp-poo-python/buenas_practicas/enums/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Composición vs. Herencia
+    Enumeraciones (Enum)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/edyp-poo-python/buenas_practicas/excepciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excepciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/edyp-poo-python/buenas_practicas/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing con pytest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/edyp-poo-python/buenas_practicas/checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist y Fuentes
   
 
     
@@ -1208,7 +1323,7 @@
   <span class="md-ellipsis">
     
   
-    Prácticas
+    Para Ir Más Lejos
   
 
     
@@ -1224,7 +1339,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Prácticas
+    Para Ir Más Lejos
   
 
           </label>
@@ -1237,98 +1352,14 @@
   
   
     <li class="md-nav__item">
-      <a href="/edyp-poo-python/practicas/enums/" class="md-nav__link">
+      <a href="/edyp-poo-python/buenas_practicas/solid/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enumeraciones (Enum)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/edyp-poo-python/practicas/excepciones/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Excepciones
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/edyp-poo-python/practicas/testing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Testing con pytest
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="/edyp-poo-python/practicas/checklist/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Checklist y Fuentes
+    Principios SOLID
   
 
     
@@ -1355,6 +1386,22 @@
                 </div>
               </div>
             
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
             
           
           
@@ -1386,6 +1433,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Cátedra EDyP — ITBA
+    </div>
   
   
     Made with
@@ -1420,11 +1471,13 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/edyp-poo-python/", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "toc.integrate", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "/edyp-poo-python/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "/edyp-poo-python/", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.action.edit", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "/edyp-poo-python/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
       <script src="/edyp-poo-python/assets/javascripts/bundle.79ae519e.min.js"></script>

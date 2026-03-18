@@ -2,86 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos/abstraccion/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/buenas_practicas/checklist/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos/encapsulamiento/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/buenas_practicas/enums/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos/herencia/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/buenas_practicas/excepciones/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos/polimorfismo/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/buenas_practicas/solid/</loc>
+         <lastmod>2026-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/buenas_practicas/testing/</loc>
+         <lastmod>2026-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/buenas_practicas/type_hinting/</loc>
+         <lastmod>2026-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos_basicos/analisis_y_diseno/</loc>
+         <lastmod>2026-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos_basicos/clases_y_objetos/</loc>
+         <lastmod>2026-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos_basicos/elementos/</loc>
+         <lastmod>2026-03-18</lastmod>
+    </url>
+    <url>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/conceptos_basicos/relaciones/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/diseno/composicion_vs_herencia/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/introduccion/cambio_de_mentalidad/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/introduccion/que_es_poo/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/introduccion/saberes_previos/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/metodos/clase_y_estaticos/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/metodos/instancia/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/metodos/magicos/</loc>
-         <lastmod>2026-03-17</lastmod>
-    </url>
-    <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/modelo/analisis_y_diseno/</loc>
-         <lastmod>2026-03-17</lastmod>
-    </url>
-    <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/modelo/clases_y_objetos/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
          <loc>https://cmaceira-itba.github.io/edyp-poo-python/modelo/elementos/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/modelo/relaciones/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/principios/abstraccion/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/modelo/solid/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/principios/encapsulamiento/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/practicas/checklist/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/principios/herencia/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
     <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/practicas/enums/</loc>
-         <lastmod>2026-03-17</lastmod>
-    </url>
-    <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/practicas/excepciones/</loc>
-         <lastmod>2026-03-17</lastmod>
-    </url>
-    <url>
-         <loc>https://cmaceira-itba.github.io/edyp-poo-python/practicas/testing/</loc>
-         <lastmod>2026-03-17</lastmod>
+         <loc>https://cmaceira-itba.github.io/edyp-poo-python/principios/polimorfismo/</loc>
+         <lastmod>2026-03-18</lastmod>
     </url>
 </urlset>
