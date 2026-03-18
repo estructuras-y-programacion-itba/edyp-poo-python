@@ -71,6 +71,10 @@ def __eq__(self, otro: object) -> bool:
 
 def __hash__(self) -> int:
     return hash(self.numero_serie)
+
+> **Nota para estudiantes:**
+>
+> Cuando implementás `__eq__`, si el otro objeto no es del tipo esperado, debés **retornar** `NotImplemented` (no levantar una excepción ni devolver `False`). Esto le indica a Python que pruebe la comparación inversa o que decida el resultado según las reglas del lenguaje. ¡No uses `raise NotImplementedError` ni `raise NotImplemented` acá! Simplemente devolvé `NotImplemented` como en el ejemplo.
 ```
 
 ### `__contains__`: soporte para el operador `in`

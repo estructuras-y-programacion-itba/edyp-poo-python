@@ -13,9 +13,9 @@ Los cuatro elementos son:
 
 La abstracción consiste en identificar las características esenciales de un objeto e ignorar los detalles irrelevantes para el contexto. Un objeto expone una **interfaz** — lo que puede hacer — y oculta su **implementación** — cómo lo hace. Quien usa el objeto no necesita saber nada de sus entrañas.
 
-En Python, la abstracción formal se implementa con el módulo `abc`. Una clase abstracta define el *contrato* que todas sus subclases deben cumplir, sin especificar cómo lo cumplen.
+En Python, la abstracción formal se implementa con la librería `abc`. Una clase abstracta define el *contrato* que todas sus subclases deben cumplir, sin especificar cómo lo cumplen.
 
-> Ver en detalle: [Abstracción](../conceptos/abstraccion.md)
+> Ver en detalle: [Abstracción](../principios/abstraccion.md)
 
 ## Encapsulamiento
 
@@ -23,7 +23,7 @@ El encapsulamiento protege el estado interno de un objeto y controla cómo se ac
 
 Abstracción y encapsulamiento son complementarios pero distintos: la abstracción define *qué* puede hacer un objeto; el encapsulamiento protege *cómo* lo hace.
 
-> Ver en detalle: [Encapsulamiento](../conceptos/encapsulamiento.md)
+> Ver en detalle: [Encapsulamiento](../principios/encapsulamiento.md)
 
 ## Modularidad
 
@@ -61,6 +61,9 @@ class Maquina:
 
 
 # --- módulo: linea_montaje.py ---
+from maquina import Maquina
+
+
 class LineaDeMontaje:
     """Gestiona una colección de máquinas. Solo depende de Maquina."""
 
@@ -71,13 +74,19 @@ class LineaDeMontaje:
         self._maquinas.append(maquina)
 
     def buscar(self, nombre: str) -> Maquina | None:
-        return next((m for m in self._maquinas if m.nombre == nombre), None)
+        for m in self._maquinas:
+            if m.nombre == nombre:
+                return m
+        return None
 
     def total_maquinas(self) -> int:
         return len(self._maquinas)
 
 
 # --- módulo: reporte.py ---
+from linea_montaje import LineaDeMontaje
+
+
 class ReportePlanta:
     """Genera reportes. Cohesivo: solo sabe de reportes, nada más."""
 
@@ -100,10 +109,7 @@ print(reporte.generar(linea))
 
 ### Cohesión y acoplamiento
 
-Dos métricas guían el diseño modular:
-
-- **Cohesión** (alta es buena): un módulo es cohesivo cuando todas sus partes trabajan juntas hacia un único propósito. `ReportePlanta` solo genera reportes — no agrega máquinas, no valida capacidades. Eso es alta cohesión.
-- **Acoplamiento** (bajo es bueno): un módulo tiene bajo acoplamiento cuando depende de pocos módulos externos y solo de sus interfaces públicas. Si `ReportePlanta` solo necesita saber que `LineaDeMontaje` tiene `total_maquinas()`, no importa cómo lo implementa internamente.
+Dos métricas guían el diseño modular: **alta cohesión** (cada módulo tiene una única responsabilidad bien definida) y **bajo acoplamiento** (los módulos dependen de pocos otros y solo de sus interfaces públicas). Las definiciones completas, con ejemplos, están en [Acoplamiento y Cohesión](../introduccion/saberes_previos.md#acoplamiento-y-cohesión).
 
 > En la práctica, cuando un cambio en una parte del sistema irradia modificaciones hacia muchos otros archivos, es una señal clara de alto acoplamiento. La solución casi siempre implica identificar qué responsabilidades están mal asignadas y redistribuirlas en módulos más cohesivos.
 
@@ -116,6 +122,6 @@ Cualquier sistema real involucra decenas de abstracciones que necesitan relacion
 
 Elegir entre estas dos es una de las decisiones de diseño más frecuentes y más importantes. La regla práctica: si podés decir con naturalidad que A *es un* B en todos los contextos, usá herencia. Si la relación es que A *tiene un* B o A *usa un* B, usá composición. En la práctica, el abuso de herencia genera jerarquías rígidas y difíciles de cambiar — la composición suele ser la opción más flexible.
 
-> Ver en detalle: [Herencia](../conceptos/herencia.md) · [Composición vs. Herencia](../diseno/composicion_vs_herencia.md)
+> Ver en detalle: [Herencia](../principios/herencia.md) · [Composición vs. Herencia](../diseno/composicion_vs_herencia.md)
 
 ---

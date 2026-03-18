@@ -63,7 +63,7 @@ class Maquina:
         }
 
     def __repr__(self) -> str:
-        return f"Maquina({self.nombre!r}, estado={self._estado!r})"
+        return f"Maquina('{self.nombre}', estado='{self._estado}')"
 
 
 # Estado y comportamiento juntos en un objeto

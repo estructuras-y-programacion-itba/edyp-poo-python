@@ -2,41 +2,49 @@ site_name: POO en Python — ITBA
 site_description: Material de referencia para la materia Estructuras de Datos y Programación
 site_author: Cátedra EDyP — ITBA
 site_url: https://cmaceira-itba.github.io/edyp-poo-python/
+copyright: Cátedra EDyP — ITBA
 
 repo_name: cmaceira-itba/edyp-poo-python
 repo_url: https://github.com/cmaceira-itba/edyp-poo-python
+edit_uri: edit/main/docs/              # Botón "Editar esta página" apunta a GitHub
 
 docs_dir: docs
 theme:
   name: material
   language: es
   palette:
-    # Modo claro
-    - scheme: default
+    # Respeta la preferencia del sistema operativo (sin toggle manual inicial)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Cambiar a modo oscuro
-    # Modo oscuro
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Cambiar a modo claro
   features:
-    - navigation.tabs           # Tabs superiores para secciones macro
-    - navigation.sections       # Agrupa ítems en el sidebar
-    - navigation.expand         # Expande secciones por defecto
-    - navigation.top            # Botón "volver arriba"
-    - navigation.footer         # Links "anterior / siguiente" al pie de cada página
-    - toc.integrate             # Integra el índice de secciones en el sidebar izquierdo
-    - toc.follow                # El sidebar sigue el scroll de la página
-    - search.suggest            # Autocompletado en búsqueda
-    - search.highlight          # Resalta términos buscados
-    - content.code.copy         # Botón para copiar snippets
-    - content.code.annotate     # Soporte para anotaciones en código
+    - navigation.instant            # Navegación SPA (sin recarga completa de página)
+    - navigation.instant.progress   # Barra de progreso en navegación instant
+    - navigation.tracking           # Actualiza la URL al hacer scroll por secciones
+    - navigation.tabs               # Tabs superiores para secciones macro
+    - navigation.sections           # Agrupa ítems en el sidebar
+    - navigation.expand             # Expande secciones por defecto
+    - navigation.top                # Botón "volver arriba"
+    - navigation.footer             # Links "anterior / siguiente" al pie de cada página
+    - toc.follow                    # El sidebar sigue el scroll de la página
+    - search.suggest                # Autocompletado en búsqueda
+    - search.highlight              # Resalta términos buscados
+    - search.share                  # Botón para compartir búsqueda por URL
+    - content.action.edit           # Botón "Editar esta página" (requiere edit_uri)
+    - content.code.copy             # Botón para copiar snippets
+    - content.code.annotate         # Soporte para anotaciones en código
+    - content.tooltips              # Tooltips enriquecidos en links y abreviaciones
 
 markdown_extensions:
   # Bloques de código con resaltado de sintaxis (Pygments)
@@ -53,14 +61,14 @@ markdown_extensions:
 
   # Admonitions: notas, advertencias, ejercicios, etc.
   - admonition
-  - pymdownx.details            # Admonitions colapsables (??? note)
+  - pymdownx.details              # Admonitions colapsables (??? note)
 
   # Tipografía y formato
   - pymdownx.smartsymbols
   - pymdownx.tabbed:
-      alternate_style: true     # Tabs de contenido dentro de una página
+      alternate_style: true       # Tabs de contenido dentro de una página
   - pymdownx.tasklist:
-      custom_checkbox: true     # Checklists estilo GitHub
+      custom_checkbox: true       # Checklists estilo GitHub
 
   # Tablas y listas de definición
   - tables
@@ -70,8 +78,12 @@ markdown_extensions:
   - attr_list
   - md_in_html
 
-  # Metadata y footnotes
-  - meta
+  # Anchors en headings y footnotes
+  - toc:
+      permalink: true             # Agrega anchor link (#) a cada heading
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower             # Preserva tildes y caracteres Unicode en los anchors
   - footnotes
 
   # Emojis e íconos de Material
@@ -90,27 +102,28 @@ nav:
       - ¿Qué es la POO?: introduccion/que_es_poo.md
       - El Cambio de Mentalidad: introduccion/cambio_de_mentalidad.md
   - Modelo de Objetos:
-      - Análisis y Diseño OO: modelo/analisis_y_diseno.md
-      - Clases y Objetos: modelo/clases_y_objetos.md
-      - Elementos del Modelo: modelo/elementos.md
-      - Relaciones entre Clases: modelo/relaciones.md
+      - Análisis y Diseño OO: conceptos_basicos/analisis_y_diseno.md
+      - Clases y Objetos: conceptos_basicos/clases_y_objetos.md
+      - Elementos del Modelo: conceptos_basicos/elementos.md
+      - Relaciones entre Clases: conceptos_basicos/relaciones.md
+      - Composición vs. Herencia: diseno/composicion_vs_herencia.md
   - Conceptos Clave:
-      - Abstracción: conceptos/abstraccion.md
-      - Encapsulamiento: conceptos/encapsulamiento.md
-      - Herencia: conceptos/herencia.md
-      - Polimorfismo: conceptos/polimorfismo.md
+      - Abstracción: principios/abstraccion.md
+      - Encapsulamiento: principios/encapsulamiento.md
+      - Herencia: principios/herencia.md
+      - Polimorfismo: principios/polimorfismo.md
   - Métodos en Profundidad:
       - Métodos de Instancia: metodos/instancia.md
       - Métodos de Clase y Estáticos: metodos/clase_y_estaticos.md
       - Métodos Mágicos (Dunder): metodos/magicos.md
-  - Diseño y Buenas Prácticas:
-      - Principios SOLID: modelo/solid.md
-      - Composición vs. Herencia: diseno/composicion_vs_herencia.md
-  - Prácticas:
-      - Enumeraciones (Enum): practicas/enums.md
-      - Excepciones: practicas/excepciones.md
-      - Testing con pytest: practicas/testing.md
-      - Checklist y Fuentes: practicas/checklist.md
+  - Buenas Prácticas:
+      - Type Hinting: buenas_practicas/type_hinting.md
+      - Enumeraciones (Enum): buenas_practicas/enums.md
+      - Excepciones: buenas_practicas/excepciones.md
+      - Testing con pytest: buenas_practicas/testing.md
+      - Checklist y Fuentes: buenas_practicas/checklist.md
+  - Para Ir Más Lejos:
+      - Principios SOLID: buenas_practicas/solid.md
 
 extra:
   social:

@@ -1,4 +1,4 @@
-# Checklist y Fuentes
+# Checklist
 
 ## Checklist: Antes de Entregar
 
@@ -43,9 +43,3 @@ Antes de revisar ítem por ítem, conviene tener presentes los criterios general
 - [ ] Los tests son independientes entre sí — ninguno depende del resultado de otro
 
 ---
-
-## Fuentes
-
-- Booch, G. *Object Oriented Analysis and Design with Applications*, 3rd Edition.
-- Martin, R. C. *Clean Code: A Handbook of Agile Software Craftsmanship*.
-- <https://profile.es/blog/que-son-los-paradigmas-de-programacion/>

@@ -8,8 +8,6 @@ Quienes llegan a esta materia ya programan de forma estructurada sin saberlo. Ca
 
 Python es multiparadigma: soporta el estructurado, el orientado a objetos y el funcional dentro del mismo lenguaje. Esa flexibilidad es una ventaja concreta — podés elegir el paradigma que mejor se adapta al problema y, en proyectos reales, solemos combinarlos.
 
-> **Prerequisitos:** Esta guía asume que ya sabés Python básico — variables, funciones, `if`, `for` y estructuras de datos como listas y diccionarios. No se requiere experiencia previa con POO.
-
 ---
 
 ## El Paradigma Estructurado

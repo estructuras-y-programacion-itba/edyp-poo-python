@@ -96,6 +96,8 @@ print(m2)  # Maquina('CNC-02', cap=60)
 print(m3)  # Maquina('CNC-STD', cap=60)
 ```
 
+Otro uso comun que haremos de los classmethods es el de **métodos de clase utilitarios** como por ejemplo: evitar que un atributo identificador de una maquina o una persona se repita, o llevar un conteo de cuántas máquinas se han creado. En esos casos, el método de clase no es un constructor alternativo sino una función que opera sobre la clase para mantener su estado o lógica relacionada.
+
 ### Por qué usar `cls` en lugar de repetir el nombre de la clase
 
 Fijate que en `desde_plantilla` usamos `cls(nombre, capacidad, tiempo_ciclo)` en lugar de `Maquina(...)`. Esto importa cuando hay subclases:

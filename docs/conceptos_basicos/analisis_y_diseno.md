@@ -6,6 +6,10 @@ Entender qué es la POO es solo el primer paso. El desafío real está en aplica
 
 A diferencia del análisis estructurado —que parte de los procesos—, el análisis orientado a objetos examina los requisitos desde la perspectiva de las clases y los objetos que aparecen en el vocabulario del dominio. Consiste en comprender el problema en términos de objetos.
 
+> **¿Qué es el "dominio"?**
+>
+> El dominio es el "mundo del problema": el conjunto de conceptos, reglas y entidades que existen en la realidad que queremos modelar. Por ejemplo, si desarrollás software para una planta industrial, el dominio incluye máquinas, operarios, piezas, estaciones, turnos, etc. Pensalo como el universo de cosas relevantes para el sistema, antes de pensar en la tecnología o la implementación.
+
 Esos objetos representan entidades físicas o abstractas del mundo real relevantes para el dominio. El objetivo es identificar los objetos, sus atributos, comportamientos y relaciones, sin enfocarse aún en cómo serán implementados.
 
 ## Técnica práctica: User Story Mapping
@@ -43,7 +47,7 @@ Una vez completado el AOO, el diseño orientado a objetos toma ese modelo de an�
 
 ## Diagramas de Clase UML
 
-El **Lenguaje de Modelado Unificado** (UML, *Unified Modeling Language*) es el estándar de la industria para representar visualmente el diseño de un sistema orientado a objetos. Dentro de UML, el **diagrama de clases** es el artefacto más usado en el DOO: permite comunicar la estructura del sistema —clases, atributos, métodos y relaciones— antes de escribir una sola línea de código.
+El **Lenguaje de Modelado Unificado** (UML, *Unified Modeling Language*) es el estándar de la industria para representar visualmente el diseño de un sistema orientado a objetos. Dentro de UML, el **diagrama de clases** es el documento más usado en el DOO: permite comunicar la estructura del sistema —clases, atributos, métodos y relaciones— antes de escribir una sola línea de código.
 
 > En la práctica, no necesitás diagramar absolutamente todo. Un diagrama liviano con las entidades principales y sus relaciones alcanza para validar el diseño con el equipo, detectar problemas de acoplamiento y servir de documentación viva.
 
