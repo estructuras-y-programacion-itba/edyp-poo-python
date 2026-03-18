@@ -1,11 +1,11 @@
 site_name: POO en Python — ITBA
 site_description: Material de referencia para la materia Estructuras de Datos y Programación
 site_author: Cátedra EDyP — ITBA
-site_url: https://cmaceira-itba.github.io/edyp-poo-python/
+site_url: https://estructuras-y-programacion-itba.github.io/edyp-poo-python/
 copyright: Cátedra EDyP — ITBA
 
-repo_name: cmaceira-itba/edyp-poo-python
-repo_url: https://github.com/cmaceira-itba/edyp-poo-python
+repo_name: estructuras-y-programacion-itba/edyp-poo-python
+repo_url: https://github.com/estructuras-y-programacion-itba/edyp-poo-python
 edit_uri: edit/main/docs/              # Botón "Editar esta página" apunta a GitHub
 
 docs_dir: docs
@@ -128,4 +128,4 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/cmaceira-itba/edyp-poo-python
+      link: https://github.com/estructuras-y-programacion-itba/edyp-poo-python
