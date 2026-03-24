@@ -6,7 +6,7 @@ Grady Booch, uno de sus principales referentes, la define así:
 
 > *"La programación orientada a objetos es un método de implementación en el que los programas se organizan como colecciones cooperativas de objetos, cada uno de los cuales representa una instancia de alguna clase, y cuyas clases son todas miembros de una jerarquía de clases unidas mediante relaciones de herencia."*
 >
-> — Grady Booch, *Object-Oriented Analysis and Design with Applications*
+> — Grady Booch, *Object-Oriented Analysis and Design with Applications* 1989
 
 ## ¿Por qué nació la POO?
 
