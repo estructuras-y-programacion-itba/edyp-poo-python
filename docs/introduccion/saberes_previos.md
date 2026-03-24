@@ -2,11 +2,15 @@
 
 ## ¿Qué es un paradigma de programación?
 
-Un paradigma de programación es una manera de organizar y estructurar el código para resolver problemas. Define qué abstracciones tenés disponibles, cómo pensás el diseño y qué estilo de soluciones producís. No es solo una cuestión de sintaxis: es una forma de razonar sobre los problemas.
+Un paradigma de programación es un marco conceptual que define cómo organizar y estructurar el código. Lejos de ser solo una cuestión de sintaxis, representa una **forma de razonar** sobre los problemas y sus soluciones.
 
-Quienes llegan a esta materia ya programan de forma estructurada sin saberlo. Cada vez que escribiste una función en Python para resolver un problema, estabas aplicando el paradigma estructurado. El objetivo es agregar una nueva forma de pensar a esa base que ya tenés.
+Cada paradigma determina qué **abstracciones** tenés a mano. Pensá en las abstracciones como los "ladrillos" o piezas fundamentales que usás para representar la realidad en tu programa:
+- En el **paradigma estructurado**, la abstracción principal es la **función** (un bloque de código que procesa datos).
+- En el **paradigma orientado a objetos**, la unidad básica es el **objeto** (una entidad que agrupa datos y comportamiento).
 
-Python es multiparadigma: soporta el estructurado, el orientado a objetos y el funcional dentro del mismo lenguaje. Esa flexibilidad es una ventaja concreta — podés elegir el paradigma que mejor se adapta al problema y, en proyectos reales, solemos combinarlos.
+Seguramente ya venís programando de forma estructurada sin saberlo. Cada vez que definiste una lógica dentro de una función en Python para resolver un problema, aplicaste ese paradigma. Nuestra meta es incorporar los objetos como una nueva herramienta conceptual para potenciar esa base que ya tenés.
+
+Python es un lenguaje **multiparadigma**: permite que el enfoque estructurado, el orientado a objetos y el funcional convivan en un mismo código. Esa flexibilidad es una ventaja clave, ya que podés elegir la abstracción que mejor encaje con la naturaleza del problema que estás resolviendo.
 
 ---
 

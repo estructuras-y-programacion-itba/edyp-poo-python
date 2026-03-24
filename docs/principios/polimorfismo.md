@@ -211,7 +211,7 @@ for r in resultados:
 
 `isinstance(objeto, Clase)` verifica si un objeto es instancia de una clase o de cualquiera de sus subclases. `type(objeto)` retorna el tipo exacto.
 
-El problema es que abusar de estas verificaciones es un **código de olor** que indica que el polimorfismo no está siendo aprovechado. Si te encontrás escribiendo muchos `if isinstance(...)`, probablemente hay un método que debería estar en la clase en lugar de en quien la llama.
+El problema es que abusar de estas verificaciones es un indicio de que el polimorfismo no está siendo aprovechado. Si te encontrás escribiendo muchos `if isinstance(...)`, probablemente hay un método que debería estar en la clase en lugar de en quien la llama.
 
 ```python
 # ❌ Esto es polimorfismo manual — antipatrón
