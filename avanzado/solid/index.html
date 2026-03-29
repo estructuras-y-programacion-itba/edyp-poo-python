@@ -1689,7 +1689,10 @@
 </div>
 <p>Los capítulos anteriores te dieron las herramientas para construir sistemas orientados a objetos. Los principios SOLID son el criterio para evaluar si esas construcciones son robustas: ¿es fácil extenderlas sin romper lo que ya funciona? ¿Cada clase tiene una sola razón para cambiar? ¿Las abstracciones definen contratos que sus implementaciones respetan? Estos cinco principios dan respuestas concretas a esas preguntas.</p>
 <h2 id="s--single-responsibility-principle-principio-de-responsabilidad-única">S — Single Responsibility Principle (Principio de Responsabilidad Única)<a class="headerlink" href="#s--single-responsibility-principle-principio-de-responsabilidad-única" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Definición</p>
 <p>Una clase debe tener una, y solo una, razón para cambiar.</p>
+</div>
 <p>Tomá el caso de una clase <code>Maquina</code> que gestiona su estado operativo, guarda eventos en base de datos y además genera reportes de turno: está haciendo demasiado. Separar responsabilidades conduce a un diseño más mantenible: <code>Maquina</code> (estado y ciclos), <code>RegistradorEventos</code> (persistencia), <code>GeneradorReportes</code> (presentación).</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># ❌ Viola SRP: la clase hace demasiado</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">MaquinaConTodo</span><span class="p">:</span>
@@ -1709,7 +1712,10 @@
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">imprimir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maquina</span><span class="p">:</span> <span class="n">Maquina</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
 </span></code></pre></div>
 <h2 id="o--openclosed-principle-principio-de-abiertocerrado">O — Open/Closed Principle (Principio de Abierto/Cerrado)<a class="headerlink" href="#o--openclosed-principle-principio-de-abiertocerrado" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Definición</p>
 <p>Las clases deben estar abiertas para su extensión, pero cerradas para su modificación.</p>
+</div>
 <p>Agregar nueva funcionalidad no debería requerir modificar código que ya funciona —y arriesgarse a romperlo. La solución es el polimorfismo: extendé el comportamiento agregando nuevas clases en lugar de acumular <code>if/else</code>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
@@ -1741,7 +1747,10 @@
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Pintando </span><span class="si">{</span><span class="n">pieza</span><span class="si">}</span><span class="s2">&quot;</span>
 </span></code></pre></div>
 <h2 id="l--liskov-substitution-principle-principio-de-sustitución-de-liskov">L — Liskov Substitution Principle (Principio de Sustitución de Liskov)<a class="headerlink" href="#l--liskov-substitution-principle-principio-de-sustitución-de-liskov" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Definición</p>
 <p>Las clases derivadas deben poder sustituirse por sus clases base sin alterar el comportamiento correcto del programa.</p>
+</div>
 <p>Cuando una clase hija viola el contrato establecido por la clase base —por ejemplo, <code>EstacionMantenimiento</code> lanzando una excepción en <code>procesar()</code> cuando la base promete que ese método es válido—, el principio queda roto. La herencia debe tener sentido tanto semántico como funcional.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -1781,7 +1790,10 @@
 </span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">est</span><span class="o">.</span><span class="n">procesar</span><span class="p">(</span><span class="s2">&quot;P-0001&quot;</span><span class="p">))</span>  <span class="c1"># ✅ funciona para todas</span>
 </span></code></pre></div>
 <h2 id="i--interface-segregation-principle-principio-de-segregación-de-interfaz">I — Interface Segregation Principle (Principio de Segregación de Interfaz)<a class="headerlink" href="#i--interface-segregation-principle-principio-de-segregación-de-interfaz" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Definición</p>
 <p>Ninguna clase debería verse forzada a depender de métodos que no utiliza.</p>
+</div>
 <p>Aunque Python no tiene "interfaces" explícitas, este principio cobra especial relevancia al diseñar Clases Base Abstractas (ABCs) o Protocolos. Crear una clase base gigante que obligue a sus subclases a implementar métodos sin sentido para ellas es exactamente lo que se busca evitar: mejor definir contratos pequeños y específicos.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
@@ -1837,7 +1849,11 @@
 </span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;lectura&quot;</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="d--dependency-inversion-principle-principio-de-inversión-de-dependencias">D — Dependency Inversion Principle (Principio de Inversión de Dependencias)<a class="headerlink" href="#d--dependency-inversion-principle-principio-de-inversión-de-dependencias" title="Permanent link">&para;</a></h2>
-<p>Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definición</p>
+<p>Los módulos de alto nivel no deben depender de módulos de bajo nivel.
+Ambos deben depender de abstracciones.</p>
+</div>
 <p>Cuando una clase de alto nivel instancia directamente sus dependencias concretas, queda acoplada a una implementación específica —difícil de testear, difícil de cambiar. La inversión de dependencias rompe ese acoplamiento: en lugar de crear la dependencia, la clase la recibe desde afuera (inyección de dependencia), dependiendo de una abstracción que puede tomar cualquier forma concreta.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
