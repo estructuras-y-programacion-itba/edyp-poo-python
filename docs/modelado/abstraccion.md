@@ -1,24 +1,71 @@
 # Abstracción
 
-!!! info "Antes de continuar"
-    Esta sección usa herencia y polimorfismo como base. Asegurate de haber leído [Herencia](herencia.md) y [Polimorfismo](polimorfismo.md) antes de continuar.
-
-El polimorfismo a través de duck typing es flexible, pero informal: si una subclase olvida implementar un método, el error aparece en runtime, cuando ese método es llamado. Las clases abstractas resuelven eso: fuerzan el contrato en el momento de instanciar la clase, no después.
-
 Identificar las características esenciales de un objeto e ignorar los detalles irrelevantes para el contexto es, precisamente, la definición de abstracción. Según Booch, *"una abstracción denota las características esenciales de un objeto que lo distinguen de todos los demás tipos de objetos y, por lo tanto, proporcionan límites conceptuales claramente definidos en relación con la perspectiva del observador."*
 
 ![La abstracción se centra en las características esenciales de un objeto según la perspectiva del observador](../img/abstraccion.png)
 
 Para ilustrar esto, pensá en cómo operás una máquina industrial de la planta: presionás el botón de inicio, configurás la velocidad y monitoreás el indicador de temperatura — sin necesitar saber nada sobre el circuito de control, los actuadores hidráulicos ni el PLC interno. La máquina expone una interfaz simple y oculta la complejidad del mecanismo. En POO hacemos exactamente lo mismo con las clases: exponemos lo necesario y ocultamos lo demás.
 
-Llevado al código Python, la abstracción formal se implementa con clases abstractas del módulo `abc`. Una clase abstracta define *qué* operaciones debe ofrecer un objeto, sin especificar *cómo* las implementa cada subclase concreta.
+## Abstracción en el diseño de clases
+
+La abstracción no es solo para clases especiales — es una decisión de diseño que tomás al escribir *cualquier* clase. Cada vez que definís qué atributos y métodos va a tener una clase, estás eligiendo cuál es el modelo mental relevante para el problema y descartando todo lo demás.
+
+Tomemos el ejemplo de una estación de trabajo en una línea de montaje. Una `EstacionCorte` real tiene decenas de parámetros internos: voltaje del motor, temperatura del aceite, estado de los sensores, historial de mantenimiento. Pero para el sistema de producción que gestiona la línea, solo importan dos cosas: procesar una pieza y reportar su estado. Eso es la abstracción en acción.
+
+```python
+class EstacionCorte:
+    """
+    Abstracción de una estación de corte CNC.
+
+    El sistema de producción solo necesita saber que puede
+    procesar piezas y reportar su estado. Los detalles del
+    mecanismo de corte son irrelevantes para ese contexto.
+    """
+
+    def __init__(self, velocidad_corte: float) -> None:
+        self._velocidad = velocidad_corte  # detalle interno, no expuesto
+        self._piezas = 0                   # estado interno
+
+    def procesar(self, pieza: str) -> str:
+        """Procesa una pieza. Interfaz pública."""
+        self._piezas += 1
+        return f"[CORTE] {pieza} cortado a {self._velocidad} mm/min"
+
+    def obtener_reporte(self) -> str:
+        """Reporta el estado. Interfaz pública."""
+        return f"Corte: {self._piezas} piezas procesadas"
+```
+
+La decisión de diseño fue: ¿qué necesita saber el sistema de producción sobre esta estación? Solo `procesar()` y `obtener_reporte()`. El resto es un detalle interno que la clase gestiona sola.
+
+Esta misma decisión la tomás al modelar cualquier cosa: un `Cliente`, un `Pedido`, un `Sensor`. Antes de escribir una sola línea de código, la pregunta es: *¿qué rol cumple este objeto en el sistema y qué necesita exponer para cumplirlo?*
+
+## Abstracción y encapsulamiento
+
+Abstracción y encapsulamiento son conceptos relacionados pero distintos:
+
+- **Abstracción** responde a *¿qué* modelo del objeto es relevante para este problema?
+- **Encapsulamiento** responde a *¿cómo* protejo ese modelo de accesos no controlados?
+
+Primero abstraés (decidís qué exponer), después encapsulás (decidís cómo proteger lo que no exponés). En la práctica van de la mano, pero conceptualmente son dos decisiones separadas.
+
+## Clases abstractas en Python
+
+Cuando trabajás con jerarquías de clases, la abstracción toma una forma específica: definir un contrato que todas las subclases deben respetar. Una clase abstracta declara *qué* operaciones debe ofrecer cualquier objeto de esa familia, sin especificar *cómo* las implementa cada subclase concreta.
+
+En Python esto se implementa con el módulo `abc`:
 
 ```python
 from abc import ABC, abstractmethod
 
 
 class EstacionTrabajo(ABC):
-    """Abstracción de una estación de trabajo en la línea de montaje."""
+    """
+    Contrato para cualquier estación de la línea de montaje.
+
+    Define qué operaciones debe ofrecer una estación, sin
+    importar si es de corte, soldadura o pintura.
+    """
 
     @abstractmethod
     def procesar(self, pieza: str) -> str:
@@ -31,18 +78,11 @@ class EstacionTrabajo(ABC):
         ...
 
     def describir(self) -> str:
-        """Descripción general con el reporte incluido."""
+        """Descripción general — disponible para todas las subclases."""
         return f"Estación activa — {self.obtener_reporte()}"
 
 
 class EstacionCorte(EstacionTrabajo):
-    """
-    Estación de corte CNC.
-
-    Args:
-        velocidad_corte: Velocidad de corte en mm/min.
-    """
-
     def __init__(self, velocidad_corte: float) -> None:
         self._velocidad = velocidad_corte
         self._piezas = 0
@@ -56,13 +96,6 @@ class EstacionCorte(EstacionTrabajo):
 
 
 class EstacionSoldadura(EstacionTrabajo):
-    """
-    Estación de soldadura MIG.
-
-    Args:
-        temperatura_soldadura: Temperatura de soldadura en °C.
-    """
-
     def __init__(self, temperatura_soldadura: float) -> None:
         self._temperatura = temperatura_soldadura
         self._piezas = 0
@@ -76,13 +109,6 @@ class EstacionSoldadura(EstacionTrabajo):
 
 
 class EstacionPintura(EstacionTrabajo):
-    """
-    Estación de pintura industrial.
-
-    Args:
-        color: Color aplicado en esta estación.
-    """
-
     def __init__(self, color: str) -> None:
         self._color = color
         self._piezas = 0
@@ -106,7 +132,7 @@ for est in estaciones:
     print(est.describir())
 ```
 
-## La abstracción como contrato
+### La clase abstracta como contrato
 
 Una clase abstracta no es solo una "clase que no se puede instanciar". Es un **contrato**: cualquier clase que herede de `EstacionTrabajo` y no implemente `procesar()` y `obtener_reporte()` lanzará un `TypeError` al intentar ser instanciada. Python impone ese contrato automáticamente.
 
@@ -130,70 +156,12 @@ except TypeError as e:
     print(e)
 ```
 
-## Niveles de abstracción
+La diferencia con duck typing es el momento en que aparece el error: con ABC el error aparece al instanciar la clase incompleta; con duck typing aparece al llamar el método ausente, que puede ser mucho más tarde en la ejecución.
 
-La abstracción no es solo cosa de ABCs. Existe en múltiples niveles:
+!!! info "Antes de continuar"
+    Esta sección usa herencia y polimorfismo. Si todavía no los leíste, revisá [Herencia](herencia.md) y [Polimorfismo](polimorfismo.md).
 
-- **Abstracción de datos**: una clase oculta cómo almacena internamente su información.
-- **Abstracción de comportamiento**: una clase abstracta o interfaz define qué hace sin decir cómo.
-- **Abstracción de subsistema**: un módulo o paquete expone una API simple que oculta su complejidad interna.
-
-```python
-from abc import ABC, abstractmethod
-
-
-class SistemaAlerta(ABC):
-    """
-    Abstracción de un sistema de alertas de planta.
-    Define el contrato sin especificar el canal de notificación.
-    """
-
-    @abstractmethod
-    def enviar(self, destinatario: str, mensaje: str) -> bool:
-        """
-        Envía una alerta.
-
-        Args:
-            destinatario: Identificador del destinatario (nombre, email, etc.).
-            mensaje: Texto de la alerta.
-
-        Returns:
-            True si el envío fue exitoso, False en caso contrario.
-        """
-        ...
-
-
-class NotificadorOperario(SistemaAlerta):
-    """Notifica al operario mediante pantalla de la planta."""
-
-    def enviar(self, destinatario: str, mensaje: str) -> bool:
-        print(f"[PANTALLA PLANTA] Para: {destinatario} | {mensaje}")
-        return True
-
-
-class NotificadorSupervisor(SistemaAlerta):
-    """Notifica al supervisor mediante email."""
-
-    def enviar(self, destinatario: str, mensaje: str) -> bool:
-        print(f"[EMAIL SUPERVISOR] Para: {destinatario} | {mensaje}")
-        return True
-
-
-def alertar_todos(
-    sistemas: list[SistemaAlerta],
-    destinatario: str,
-    mensaje: str,
-) -> None:
-    """Envía una alerta por todos los sistemas disponibles."""
-    for sistema in sistemas:
-        sistema.enviar(destinatario, mensaje)
-
-
-canales: list[SistemaAlerta] = [NotificadorOperario(), NotificadorSupervisor()]
-alertar_todos(canales, "Juan Pérez", "Temperatura fuera de rango en CNC-01")
-```
-
-## En la práctica: ABC vs duck typing
+### ABC vs duck typing
 
 Python ofrece dos caminos para lograr abstracción polimórfica:
 
@@ -225,7 +193,7 @@ class EstacionRobotica:
 # Funciona igual porque tiene los métodos procesar() y obtener_reporte()
 robot = EstacionRobotica("ABB-IRB6700")
 print(robot.procesar("P-0005"))   # ✅
-print(robot.describir())          # ❌ describir() no existe en duck typing — error en runtime
+print(robot.describir())          # ❌ describir() no existe — error en runtime
 ```
 
 > **En la práctica:** en proyectos de equipo o en código que otros van a consumir, preferí ABC. El contrato explícito evita bugs silenciosos: si olvidás implementar un método, el error aparece al instanciar la clase, no horas después en producción cuando ese método es llamado. Para código propio y proyectos pequeños, duck typing es perfectamente válido y más ágil.
