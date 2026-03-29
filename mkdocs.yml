@@ -97,34 +97,41 @@ plugins:
 
 nav:
   - Inicio: index.md
+
   - Introducción:
       - De lo Estructurado a los Objetos: introduccion/saberes_previos.md
       - ¿Qué es la POO?: introduccion/que_es_poo.md
       - El Cambio de Mentalidad: introduccion/cambio_de_mentalidad.md
-  - Modelo de Objetos:
-      - Análisis y Diseño OO: conceptos_basicos/analisis_y_diseno.md
-      - Clases y Objetos: conceptos_basicos/clases_y_objetos.md
-      - Elementos del Modelo: conceptos_basicos/elementos.md
-      - Relaciones entre Clases: conceptos_basicos/relaciones.md
-      - Composición vs. Herencia: diseno/composicion_vs_herencia.md
-  - Conceptos Clave:
-      - Abstracción: principios/abstraccion.md
-      - Encapsulamiento: principios/encapsulamiento.md
-      - Herencia: principios/herencia.md
-      - Polimorfismo: principios/polimorfismo.md
+      - Primer Programa OO: introduccion/primer_programa.md
+
+  - Fundamentos:
+      - Clases y Objetos: fundamentos/clases_y_objetos.md
+      - Métodos de Instancia: fundamentos/instancia.md
+      - Type Hinting: fundamentos/type_hinting.md
+      - Encapsulamiento: fundamentos/encapsulamiento.md
+      - Enumeraciones (Enum): fundamentos/enums.md
+      - Elementos de la POO: fundamentos/elementos.md
+
   - Métodos en Profundidad:
-      - Métodos de Instancia: metodos/instancia.md
       - Métodos de Clase y Estáticos: metodos/clase_y_estaticos.md
       - Métodos Mágicos (Dunder): metodos/magicos.md
-  - Buenas Prácticas:
-      - Type Hinting: buenas_practicas/type_hinting.md
-      - Enumeraciones (Enum): buenas_practicas/enums.md
-      - Excepciones: buenas_practicas/excepciones.md
-      - Testing con pytest: buenas_practicas/testing.md
-      - Checklist y Fuentes: buenas_practicas/checklist.md
+
+  - Modelado y Diseño de Objetos:
+      - Relaciones entre Clases: modelado/relaciones.md
+      - Herencia: modelado/herencia.md
+      - Polimorfismo: modelado/polimorfismo.md
+      - Abstracción: modelado/abstraccion.md
+      - Composición vs. Herencia: modelado/composicion_vs_herencia.md
+      - Análisis y Diseño OO: modelado/analisis_y_diseno.md
+
+  - Herramientas de Desarrollo:
+      - Excepciones: herramientas/excepciones.md
+      - Testing con pytest: herramientas/testing.md
+
   - Para Ir Más Lejos:
-      - Principios SOLID: buenas_practicas/solid.md
-      - Herencia Múltiple: buenas_practicas/herencia_multiple.md
+      - Principios SOLID: avanzado/solid.md
+      - Herencia Múltiple: avanzado/herencia_multiple.md
+      - Checklist y Fuentes: avanzado/checklist.md
 
 extra:
   social:

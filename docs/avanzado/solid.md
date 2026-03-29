@@ -1,5 +1,10 @@
 # Principios SOLID
 
+!!! info "Antes de continuar"
+    SOLID aplica herencia, composición y abstracción de forma intensiva. Conviene tener leídos [Herencia](../modelado/herencia.md), [Composición vs. Herencia](../modelado/composicion_vs_herencia.md) y [Abstracción](../modelado/abstraccion.md) antes de continuar.
+
+Los capítulos anteriores te dieron las herramientas para construir sistemas orientados a objetos. Los principios SOLID son el criterio para evaluar si esas construcciones son robustas: ¿es fácil extenderlas sin romper lo que ya funciona? ¿Cada clase tiene una sola razón para cambiar? ¿Las abstracciones definen contratos que sus implementaciones respetan? Estos cinco principios dan respuestas concretas a esas preguntas.
+
 ## S — Single Responsibility Principle (Principio de Responsabilidad Única)
 
 Una clase debe tener una, y solo una, razón para cambiar.
@@ -214,5 +219,12 @@ control_soldadura = SistemaControl(EstacionSoldadura())
 print(control_corte.ejecutar_ciclo("P-0001"))     # [CORTE] P-0001
 print(control_soldadura.ejecutar_ciclo("P-0001")) # [SOLDADURA] P-0001
 ```
+
+## Ver también
+
+SOLID formaliza los criterios de diseño. La herencia múltiple es uno de los contextos donde esos criterios se ponen a prueba con más intensidad:
+
+- [Herencia Múltiple](herencia_multiple.md) — MRO, mixins y cuándo la herencia múltiple tiene sentido (y cuándo no)
+- [Checklist](checklist.md) — SOLID está integrado en la lista de verificación de entrega
 
 ---

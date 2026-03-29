@@ -1,5 +1,7 @@
 # Encapsulamiento
 
+Con clases, métodos e indicaciones de tipo en mano, surge una pregunta de diseño crítica: ¿quién puede leer y modificar los atributos de un objeto? El encapsulamiento responde esa pregunta — y es uno de los cuatro pilares fundamentales de la POO según Booch.
+
 Proteger los datos internos de un objeto y controlar cómo se accede o modifica su estado es la función del encapsulamiento. La idea central es que el estado interno no debería ser accesible directamente desde afuera: cada objeto es el único responsable de mantener su propia consistencia.
 
 Ambos conceptos —abstracción y encapsulamiento— son complementarios pero no equivalentes. Mientras la abstracción define *qué* puede hacer un objeto (su contrato externo), el encapsulamiento protege *cómo* lo hace (su implementación interna).
@@ -212,5 +214,12 @@ except AttributeError as e:
 | El atributo es interno y no forma parte de la API | Prefijo `_` sin property |
 
 > **En la práctica:** un error frecuente es crear getters y setters para *todos* los atributos por defecto, imitando el estilo de Java. En Python, si no necesitás validación ni lógica adicional, un atributo público es perfectamente aceptable. Los `@property` agregan valor cuando hay algo concreto que controlar o calcular, no como burocracia.
+
+## Ver también
+
+El encapsulamiento controla el acceso al estado. Pero a veces no alcanza con controlar el acceso: también queremos restringir los valores válidos que ese estado puede tomar:
+
+- [Enumeraciones (Enum)](enums.md) — cómo definir conjuntos cerrados de valores válidos para un atributo
+- [Los Cuatro Elementos del Modelo](elementos.md) — cómo el encapsulamiento encaja en el modelo completo de Booch
 
 ---

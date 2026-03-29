@@ -1,5 +1,10 @@
 # Herencia
 
+!!! info "Antes de continuar"
+    Esta sección construye sobre el concepto de relaciones entre clases. Si llegaste directamente acá, revisá primero [Relaciones entre Clases](relaciones.md).
+
+En la taxonomía de relaciones vimos que la herencia responde a la pregunta "¿es-un?". Acá trabajamos la mecánica: cómo una subclase adquiere atributos y métodos de su superclase, cómo inicializarla correctamente con `super()`, y cómo sobreescribir comportamiento sin romper la relación.
+
 La herencia es el mecanismo por el cual una clase (la **subclase** o clase hija) adquiere los atributos y métodos de otra clase (la **superclase** o clase padre). La relación que establece es "es-un": una `EstacionCorte` *es una* `EstacionTrabajo`, una `EstacionSoldadura` *es una* `EstacionTrabajo`.
 
 Además de reutilizar código, la herencia permite tratar a objetos de distintas subclases de manera uniforme a través de la interfaz común de su clase padre — lo que habilita el polimorfismo.
@@ -289,5 +294,13 @@ print(type(cnc))                         # <class 'EstacionCorte'>
 ```
 
 > **En la práctica:** la herencia es una de las herramientas más poderosas y, al mismo tiempo, más abusadas de la POO. En más de un proyecto vi jerarquías de 5 o 6 niveles de profundidad que nadie entendía y que nadie se animaba a tocar porque cualquier cambio rompía algo impredecible. La regla que más me funcionó: si necesitás más de 2 niveles de herencia, seguramente hay composición que todavía no fue identificada.
+
+## Ver también
+
+La herencia hace posible una capacidad clave: tratar objetos de distintos tipos de forma uniforme. Eso es el polimorfismo:
+
+- [Polimorfismo](polimorfismo.md) — cómo aprovechar la herencia para escribir código más flexible y extensible
+- [Abstracción](abstraccion.md) — cómo formalizar los contratos que la herencia debe respetar usando clases abstractas
+- [Composición vs. Herencia](composicion_vs_herencia.md) — cuándo la herencia es la herramienta correcta y cuándo no
 
 ---

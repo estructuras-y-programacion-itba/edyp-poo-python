@@ -1,5 +1,10 @@
 # Excepciones
 
+!!! info "Antes de continuar"
+    Las excepciones son objetos que forman una jerarquía mediante herencia. Si no revisaste ese mecanismo todavía, conviene leer primero [Herencia](../modelado/herencia.md).
+
+Un sistema bien diseñado no solo funciona en condiciones ideales — también comunica con claridad qué salió mal cuando algo falla. Las excepciones son el mecanismo de Python para eso: objetos que interrumpen el flujo normal y llevan información sobre el error. Como en toda la POO, están organizadas en una jerarquía de clases.
+
 Python maneja las situaciones anómalas durante la ejecución mediante excepciones. En el paradigma orientado a objetos, estas son **objetos**: instancias de clases que forman una jerarquía de herencia.
 
 Lejos de ser un recurso de "último momento", el manejo de excepciones es parte integral del **diseño**. Bertrand Meyer formalizó esta idea en el concepto de *Design by Contract*: cada método tiene precondiciones (qué espera recibir) y postcondiciones (qué garantiza producir); las excepciones son el instrumento para comunicar que ese contrato fue violado.
@@ -242,5 +247,12 @@ linea.agregar_maquina(Maquina("MIG-01", temp_max=90.0))
 linea.ejecutar_ciclo(60.0)   # temperatura normal → ciclo exitoso
 linea.ejecutar_ciclo(85.0)   # temperatura alta → MaquinaFalloError en CNC-01
 ```
+
+## Ver también
+
+Con un manejo de excepciones bien diseñado, el complemento natural es verificar que ese comportamiento sea correcto y se mantenga en el tiempo:
+
+- [Testing con pytest](testing.md) — cómo testear que las excepciones se lanzan cuando deben y con el mensaje correcto
+- [Análisis y Diseño OO](../modelado/analisis_y_diseno.md) — las excepciones de dominio son parte del contrato de diseño
 
 ---

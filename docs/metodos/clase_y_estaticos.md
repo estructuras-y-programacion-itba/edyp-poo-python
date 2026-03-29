@@ -1,5 +1,10 @@
 # Métodos de Clase y Estáticos
 
+!!! info "Antes de continuar"
+    Esta sección asume que ya conocés los métodos de instancia. Si no los repasaste todavía, arrancá por [Métodos de Instancia](../fundamentos/instancia.md).
+
+Los métodos de instancia son el tipo más frecuente, pero no el único. Python ofrece dos tipos adicionales — `@classmethod` y `@staticmethod` — que responden a necesidades específicas de diseño: crear objetos desde distintos formatos o agrupar funciones de dominio que no necesitan acceder al estado.
+
 Además de los métodos de instancia, Python ofrece dos tipos adicionales de métodos que responden a necesidades específicas de diseño. Conocerlos te permite elegir la herramienta correcta para cada situación.
 
 ## Los tres tipos de métodos: un resumen
@@ -237,5 +242,11 @@ print(type(m_bien))  # <class 'MaquinaRobotica'> ✅
 ```
 
 > **En la práctica:** los `@classmethod` son especialmente útiles para leer objetos desde distintos formatos (JSON, CSV, diccionarios), implementando el patrón *Factory*. En lugar de llenar el `__init__` con parámetros opcionales para cada formato posible, creás un método de clase por formato: `Maquina.desde_configuracion(config)`, `Maquina.desde_csv(linea)`, `Maquina.desde_plantilla(tipo)`. El `__init__` queda limpio y cada constructor alternativo tiene su propósito claro.
+
+## Ver también
+
+Con los tres tipos de métodos cubiertos, el paso natural es explorar los métodos especiales que Python llama automáticamente en respuesta a operadores y funciones built-in:
+
+- [Métodos Mágicos (Dunder)](magicos.md) — `__repr__`, `__eq__`, `__len__` y cómo integrar tus clases con el lenguaje
 
 ---

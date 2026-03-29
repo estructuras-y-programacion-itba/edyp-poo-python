@@ -1,5 +1,10 @@
 # Relaciones entre Clases
 
+!!! info "Antes de continuar"
+    Esta sección asume que sabés definir clases con atributos y métodos. Si necesitás repasar, empezá por [Clases y Objetos](../fundamentos/clases_y_objetos.md).
+
+Hasta acá diseñamos clases de forma individual. En cualquier sistema real, las clases no existen aisladas: colaboran, se agrupan y se especializan. Esta sección introduce la taxonomía de relaciones — el vocabulario que te permite leer y diseñar diagramas de clases con precisión.
+
 Un sistema real no se compone de clases aisladas: las clases se relacionan entre sí para colaborar. Entender qué tipo de relación existe entre dos clases determina cómo las vas a implementar en código y cuán flexibles o rígidas van a ser esas decisiones a futuro.
 
 Existen cuatro tipos de relaciones fundamentales en el diseño orientado a objetos. Las tres primeras (asociación, agregación, composición) responden a la pregunta "¿tiene-un / usa-un?"; la cuarta (herencia) responde a "¿es-un?".
@@ -310,6 +315,13 @@ En la mayoría de los sistemas reales, las relaciones más frecuentes son:
 
 La herencia es menos frecuente de lo que parece al principio. Antes de usarla, aplicá el test "es-un". Si el test falla o generás dudas, la composición suele ser la alternativa más flexible y mantenible.
 
-> **En la práctica:** uno de los errores más costosos en proyectos reales es modelar como herencia lo que en realidad es composición. Heredar por conveniencia (para reutilizar un método) en lugar de por relación "es-un" produce jerarquías frágiles que se rompen cuando los requerimientos cambian. El tema se desarrolla en profundidad en [Composición vs. Herencia](../diseno/composicion_vs_herencia.md).
+> **En la práctica:** uno de los errores más costosos en proyectos reales es modelar como herencia lo que en realidad es composición. Heredar por conveniencia (para reutilizar un método) en lugar de por relación "es-un" produce jerarquías frágiles que se rompen cuando los requerimientos cambian. El tema se desarrolla en profundidad en [Composición vs. Herencia](composicion_vs_herencia.md).
+
+## Ver también
+
+Con el mapa de relaciones claro, los siguientes temas profundizan en las relaciones más importantes y sus implicancias de diseño:
+
+- [Herencia](herencia.md) — la relación "es-un" en detalle: sintaxis, `super()` y sobreescritura de métodos
+- [Composición vs. Herencia](composicion_vs_herencia.md) — cómo decidir entre las dos relaciones más frecuentes
 
 ---

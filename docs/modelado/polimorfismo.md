@@ -1,5 +1,10 @@
 # Polimorfismo
 
+!!! info "Antes de continuar"
+    El polimorfismo tiene más sentido después de entender la herencia. Si no la revisaste todavía, empezá por [Herencia](herencia.md).
+
+La herencia establece una jerarquía entre clases. El polimorfismo es lo que hace esa jerarquía útil: permite que distintos tipos respondan al mismo mensaje, lo que te deja escribir código que funciona con cualquier objeto que cumpla una interfaz — sin importar su tipo concreto.
+
 El polimorfismo es la capacidad de tratar objetos de distintos tipos de manera uniforme, siempre que compartan una interfaz común. La misma operación —la misma llamada de método— produce resultados distintos dependiendo del tipo real del objeto.
 
 La palabra viene del griego: *poly* (muchas) + *morphē* (formas). Un mismo mensaje, muchas respuestas posibles.
@@ -249,5 +254,12 @@ def ejecutar_estacion(estacion: object, pieza: str) -> str:
 ```
 
 > **En la práctica:** cuando revisamos código de alumnos, el indicador más frecuente de "polimorfismo no aprovechado" es una cadena de `if/elif` que verifica el tipo del objeto para decidir qué hacer. Cada vez que te tentés a escribir `if isinstance(x, EstacionCorte): ... elif isinstance(x, EstacionSoldadura): ...`, preguntate: ¿debería este comportamiento estar en un método de `EstacionCorte` y `EstacionSoldadura` directamente?
+
+## Ver también
+
+El duck typing ofrece polimorfismo informal y flexible. Cuando necesitás garantías más fuertes — contratos explícitos que Python verifique — el siguiente paso es la abstracción formal:
+
+- [Abstracción](abstraccion.md) — clases abstractas con `ABC` para definir interfaces obligatorias
+- [Herencia](herencia.md) — el mecanismo que habilita el polimorfismo basado en jerarquías
 
 ---

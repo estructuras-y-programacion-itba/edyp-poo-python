@@ -1,5 +1,7 @@
 # Análisis y Diseño Orientado a Objetos
 
+Tenemos el kit completo: clases, métodos, type hints, encapsulamiento, relaciones, herencia, polimorfismo, abstracción y composición. Esta sección muestra cómo se usa ese kit desde cero: partiendo de un enunciado o requerimiento, ¿cómo identificás los objetos, sus responsabilidades y sus relaciones antes de escribir una sola línea de código?
+
 Entender qué es la POO es solo el primer paso. El desafío real está en aplicarla: dado un problema, ¿cómo sabés qué objetos modelar? ¿Cómo pasás de un enunciado a un conjunto de clases con responsabilidades claras? Para eso existen dos disciplinas complementarias: el **Análisis Orientado a Objetos** y el **Diseño Orientado a Objetos**.
 
 ## Análisis Orientado a Objetos (AOO)
@@ -161,5 +163,12 @@ classDiagram
     LineaDeMontaje "1" o-- "*" EstacionTrabajo : agrega
     EstacionTrabajo "1" --> "*" Pieza : procesa
 ```
+
+## Ver también
+
+El análisis y diseño produce un modelo de clases robusto. El siguiente capítulo se enfoca en hacerlo resiliente ante errores:
+
+- [Excepciones](../herramientas/excepciones.md) — cómo diseñar el manejo de errores como parte del contrato de una clase
+- [Testing con pytest](../herramientas/testing.md) — cómo verificar que el diseño funciona como se especificó
 
 ---

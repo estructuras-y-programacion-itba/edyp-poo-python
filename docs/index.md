@@ -17,11 +17,11 @@ No es facil dominar la POO de un día para el otro, pero con práctica y pacienc
 
 - [Qué es un paradigma de programación y cómo se diferencia el estructurado del orientado a objetos](introduccion/saberes_previos.md)
 - [Qué es la POO y por qué surgió](introduccion/que_es_poo.md)
-- [Cómo pensar en términos de objetos: abstracción, encapsulamiento, modularidad y jerarquía](conceptos_basicos/elementos.md)
+- [Cómo pensar en términos de objetos: abstracción, encapsulamiento, modularidad y jerarquía](fundamentos/elementos.md)
 - [Qué son el acoplamiento y la cohesión, y por qué importan en el diseño](introduccion/saberes_previos.md#acoplamiento-y-cohesión)
-- [Los cinco principios SOLID y cómo aplicarlos en Python](buenas_practicas/solid.md)
-- [Cómo manejar errores con excepciones, incluyendo excepciones personalizadas](buenas_practicas/excepciones.md)
-- [Cómo escribir tests unitarios para clases con `pytest`](buenas_practicas/testing.md)
+- [Los cinco principios SOLID y cómo aplicarlos en Python](avanzado/solid.md)
+- [Cómo manejar errores con excepciones, incluyendo excepciones personalizadas](herramientas/excepciones.md)
+- [Cómo escribir tests unitarios para clases con `pytest`](herramientas/testing.md)
 
 ## Referencias
 

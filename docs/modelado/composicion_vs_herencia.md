@@ -1,5 +1,7 @@
 # Composición vs. Herencia
 
+Ya conocemos las relaciones "es-un" (herencia) y "tiene-un" (composición), y sabemos que la abstracción permite definir contratos formales. Ahora viene la pregunta práctica que aparece en casi cada diseño: ¿cuándo uso herencia y cuándo uso composición? Esta sección da el criterio para responderla.
+
 Uno de los debates de diseño más frecuentes en POO es cuándo usar herencia y cuándo usar composición. Tanto Grady Booch como el "Gang of Four" (Gamma, Helm, Johnson, Vlissides en *Design Patterns*) son explícitos al respecto:
 
 > *"Favorecé la composición sobre la herencia."*
@@ -291,5 +293,12 @@ print(est)             # nombre='CNC-01', tiempo_ciclo=15.0
 Los mixins son herencia, pero con un propósito muy acotado: agregan un comportamiento transversal sin establecer una jerarquía de dominio. La convención en Python es nombrarlos con el sufijo `Mixin` para dejar claro que no son clases base completas.
 
 > **En la práctica:** la regla que más me funcionó para elegir es la siguiente: si tenés que explicar por qué `B` hereda de `A` (porque no es obvio que "B es un A"), entonces no deberías usar herencia. El diseño debería comunicarse solo. Si la relación necesita justificación, es una señal de que estás forzando la herencia donde corresponde composición.
+
+## Ver también
+
+Con las herramientas de diseño cubiertas, el paso que cierra el capítulo de modelado es aprender el proceso: cómo pasar de un enunciado a un conjunto de clases bien diseñadas:
+
+- [Análisis y Diseño OO](analisis_y_diseno.md) — del problema en lenguaje natural a clases con responsabilidades claras
+- [Principios SOLID](../avanzado/solid.md) — especialmente SRP y OCP, que refuerzan las reglas de composición vistas acá
 
 ---

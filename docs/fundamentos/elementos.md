@@ -1,5 +1,7 @@
 # Los Cuatro Elementos del Modelo
 
+A lo largo del capítulo de Fundamentos fuiste construyendo un kit de herramientas: constructores, métodos de instancia, type hints, encapsulamiento, enums. Esta sección da un paso atrás para integrar esas piezas en un marco conceptual sólido: los cuatro elementos que Booch identificó como pilares de todo modelo orientado a objetos bien formado.
+
 Grady Booch identificó cuatro elementos que todo modelo orientado a objetos bien formado debe contemplar. No son características opcionales ni capas que se agregan al final: son los pilares sobre los que se construye el diseño. Entender qué es cada uno —y en qué se diferencia de los demás— es el primer paso para tomar decisiones de diseño fundamentadas.
 
 Los cuatro elementos son:
@@ -15,7 +17,7 @@ La abstracción consiste en identificar las características esenciales de un ob
 
 En Python, la abstracción formal se implementa con la librería `abc`. Una clase abstracta define el *contrato* que todas sus subclases deben cumplir, sin especificar cómo lo cumplen.
 
-> Ver en detalle: [Abstracción](../principios/abstraccion.md)
+> Ver en detalle: [Abstracción](../modelado/abstraccion.md)
 
 ## Encapsulamiento
 
@@ -23,7 +25,7 @@ El encapsulamiento protege el estado interno de un objeto y controla cómo se ac
 
 Abstracción y encapsulamiento son complementarios pero distintos: la abstracción define *qué* puede hacer un objeto; el encapsulamiento protege *cómo* lo hace.
 
-> Ver en detalle: [Encapsulamiento](../principios/encapsulamiento.md)
+> Ver en detalle: [Encapsulamiento](encapsulamiento.md)
 
 ## Modularidad
 
@@ -122,6 +124,14 @@ Cualquier sistema real involucra decenas de abstracciones que necesitan relacion
 
 Elegir entre estas dos es una de las decisiones de diseño más frecuentes y más importantes. La regla práctica: si podés decir con naturalidad que A *es un* B en todos los contextos, usá herencia. Si la relación es que A *tiene un* B o A *usa un* B, usá composición. En la práctica, el abuso de herencia genera jerarquías rígidas y difíciles de cambiar — la composición suele ser la opción más flexible.
 
-> Ver en detalle: [Herencia](../principios/herencia.md) · [Composición vs. Herencia](../diseno/composicion_vs_herencia.md)
+> Ver en detalle: [Herencia](../modelado/herencia.md) · [Composición vs. Herencia](../modelado/composicion_vs_herencia.md)
+
+## Ver también
+
+Estos cuatro elementos son el marco para todas las decisiones de diseño que siguen. Los próximos capítulos los aplican en profundidad:
+
+- [Métodos de Clase y Estáticos](../metodos/clase_y_estaticos.md) — más tipos de métodos para completar el comportamiento de una clase
+- [Relaciones entre Clases](../modelado/relaciones.md) — cómo se implementa la jerarquía en un sistema con múltiples clases
+- [Abstracción](../modelado/abstraccion.md) — la implementación formal del primer elemento con clases abstractas
 
 ---

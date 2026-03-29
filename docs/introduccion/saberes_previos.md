@@ -1,10 +1,13 @@
 # Paradigmas de Programación
 
+Esta sección arranca el recorrido del material: antes de ver clases y objetos, conviene entender desde dónde venimos y qué métricas vamos a usar para evaluar si un diseño es bueno. Acá definimos qué es un paradigma, repasamos la programación estructurada que ya conocés, e introducimos acoplamiento y cohesión — los dos conceptos que van a guiar todas tus decisiones de diseño de acá en adelante.
+
 ## ¿Qué es un paradigma de programación?
 
 Un paradigma de programación es un marco conceptual que define cómo organizar y estructurar el código. Lejos de ser solo una cuestión de sintaxis, representa una **forma de razonar** sobre los problemas y sus soluciones.
 
 Cada paradigma determina qué **abstracciones** tenés a mano. Pensá en las abstracciones como los "ladrillos" o piezas fundamentales que usás para representar la realidad en tu programa:
+
 - En el **paradigma estructurado**, la abstracción principal es la **función** (un bloque de código que procesa datos).
 - En el **paradigma orientado a objetos**, la unidad básica es el **objeto** (una entidad que agrupa datos y comportamiento).
 
@@ -162,5 +165,12 @@ Por su parte, la alta cohesión permite:
 - Mejorar la reutilización, al concentrar todo lo relacionado con una responsabilidad en el mismo lugar.
 - Mejorar el mantenimiento del software, dado que todo está perfectamente localizado.
 - Facilitar las pruebas de caja negra.
+
+## Ver también
+
+Con las métricas de diseño claras — bajo acoplamiento, alta cohesión — el siguiente paso es entender el paradigma que las hace posibles de forma natural: la Programación Orientada a Objetos.
+
+- [¿Qué es la POO?](que_es_poo.md) — definición, historia y características fundamentales
+- [El Cambio de Mentalidad](cambio_de_mentalidad.md) — cómo aplicar estas métricas al diseñar objetos
 
 ---

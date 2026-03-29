@@ -1,6 +1,11 @@
 # Herencia Múltiple
 
-En el artículo sobre [herencia](../principios/herencia.md) vimos que una clase hija adquiere los atributos y métodos de una clase padre: la relación "es-un". En [composición vs. herencia](../diseno/composicion_vs_herencia.md) discutimos cuándo esa relación se vuelve forzada y conviene delegar con composición. Ahí también aparecieron los **mixins** como un punto intermedio: clases pequeñas que inyectan comportamiento transversal sin establecer una jerarquía de dominio.
+!!! info "Antes de continuar"
+    Esta sección extiende los conceptos de [Herencia](../modelado/herencia.md), [Composición vs. Herencia](../modelado/composicion_vs_herencia.md) y [Principios SOLID](solid.md). Es material de profundización — asegurate de tener esas bases antes de seguir.
+
+Aplicando los principios SOLID — especialmente el Principio de Sustitución de Liskov — la herencia múltiple requiere disciplina adicional: cuando una clase tiene varios padres, el orden en que Python resuelve los métodos puede producir comportamientos inesperados. Esta sección cubre la mecánica completa y el patrón mixin, que es la forma correcta de usar herencia múltiple en Python.
+
+En el artículo sobre [herencia](../modelado/herencia.md) vimos que una clase hija adquiere los atributos y métodos de una clase padre: la relación "es-un". En [composición vs. herencia](../modelado/composicion_vs_herencia.md) discutimos cuándo esa relación se vuelve forzada y conviene delegar con composición. Ahí también aparecieron los **mixins** como un punto intermedio: clases pequeñas que inyectan comportamiento transversal sin establecer una jerarquía de dominio.
 
 Lo que todavía no abordamos es la mecánica completa: ¿qué pasa cuando una clase hereda de **más de un padre simultáneamente**? ¿Cómo decide Python cuál método ejecutar si varios padres definen el mismo nombre? A eso se le llama **herencia múltiple** y es la herramienta que hace posible el patrón mixin.
 
@@ -88,7 +93,7 @@ Si necesitaras que `EstacionRobotica` tenga prioridad, bastaría con invertir el
 
 Un **mixin** es una clase diseñada para ser combinada con otras a través de herencia múltiple, pero que **no tiene sentido instanciar por sí sola**. No establece una relación "es-un" de dominio; simplemente agrega un comportamiento auxiliar. La convención en Python es nombrar estos mixins con el sufijo `Mixin`.
 
-En [composición vs. herencia](../diseno/composicion_vs_herencia.md) vimos el ejemplo del `SerializableMixin`. Ahora vamos a desarrollar un caso más completo: una fábrica de estaciones de trabajo que combina capacidades mediante mixins.
+En [composición vs. herencia](../modelado/composicion_vs_herencia.md) vimos el ejemplo del `SerializableMixin`. Ahora vamos a desarrollar un caso más completo: una fábrica de estaciones de trabajo que combina capacidades mediante mixins.
 
 ### Ejemplo: fábrica de estaciones con mixins
 
@@ -331,5 +336,12 @@ print(D.__mro__)
 Si `B` y `C` no usaran `super()`, la cadena se rompería y `A.__init__` podría no ejecutarse o ejecutarse más de una vez. Por eso la regla: **en herencia múltiple, siempre usá `super()`** para delegar al siguiente en el MRO.
 
 > **En la práctica:** la herencia múltiple en Python funciona bien cuando se usa con disciplina. Los mixins bien diseñados son una de las herramientas más elegantes del lenguaje —el propio framework Django los utiliza extensivamente en sus vistas basadas en clases. Pero en cuanto la jerarquía se complica, los mixins dejan de ser la solución y pasan a ser el problema. La regla que más me funcionó: si un mixin necesita conocer detalles de la clase con la que se combina, dejó de ser un mixin y pasó a ser acoplamiento disfrazado.
+
+## Ver también
+
+Con este tema cubierto, tenés el panorama completo del material. El último paso es usar la checklist para verificar la calidad de tus entregas:
+
+- [Checklist](checklist.md) — criterios de calidad: diseño, código Python, validación y testing
+- [Principios SOLID](solid.md) — especialmente LSP, que aplica directamente a jerarquías de herencia
 
 ---

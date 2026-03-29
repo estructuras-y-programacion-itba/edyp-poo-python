@@ -1,5 +1,7 @@
 # Type Hinting en Python
 
+En los ejemplos anteriores escribimos métodos con atributos e instancias. El type hinting es la herramienta que hace explícito el contrato de esos métodos: qué tipos reciben, qué tipos retornan. No cambia cómo funciona el código en runtime, pero mejora radicalmente la legibilidad, el soporte del IDE y la capacidad de las herramientas de análisis estático para detectar errores antes de ejecutar.
+
 Python es un lenguaje de tipado dinámico: no necesitás declarar el tipo de una variable antes de usarla. Eso da flexibilidad, pero también puede generar confusión cuando el código crece o cuando alguien más tiene que entenderlo.
 
 El *type hinting* (o anotaciones de tipo) es una forma de declarar explícitamente qué tipos esperan recibir y retornar tus funciones y métodos. No cambia cómo ejecuta el programa —Python las ignora en tiempo de ejecución—, pero sí cambia radicalmente qué tan fácil es leer, mantener y trabajar con el código.
@@ -220,3 +222,10 @@ En proyectos grandes, integrarlo a la pipeline de CI es una práctica estándar.
 | Clase propia | mismo nombre de la clase |
 | Referencia circular | `"NombreClase"` entre comillas |
 | Atributo de instancia | `self._attr: list[X] = []` en `__init__` |
+
+## Ver también
+
+El type hinting documenta el contrato de tus métodos. El siguiente concepto protege el estado que esos métodos manejan:
+
+- [Encapsulamiento](encapsulamiento.md) — convenciones de acceso y decoradores `@property`
+- [Clases y Objetos](clases_y_objetos.md) — contexto sobre atributos de instancia y de clase que se anotan con tipos

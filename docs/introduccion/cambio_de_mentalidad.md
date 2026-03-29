@@ -1,5 +1,7 @@
 # El Cambio de Mentalidad
 
+Ya sabemos qué es la POO y cuáles son sus cuatro características fundamentales. Pero conocer la teoría no alcanza: el error más frecuente al aprender POO es seguir pensando de forma procedural y simplemente "envolver" ese código en una clase. Esta sección trabaja exactamente ese error — y cómo evitarlo.
+
 Aprender la sintaxis de las clases en Python es la parte fácil. El verdadero desafío al aprender POO es otro: cambiar la manera en que pensás un problema antes de escribir una sola línea de código.
 
 ## De verbos a sustantivos
@@ -249,5 +251,12 @@ print(linea)         # LineaDeMontaje('Línea A', estaciones=2)
 No te preocupés si al principio seguís pensando en "pasos". Es completamente normal. La mentalidad procedural está profundamente arraigada y el cambio al diseño orientado a objetos lleva semanas de práctica deliberada.
 
 Una señal de progreso: cuando empezás a diseñar las clases *antes* de escribir el código, preguntándote qué entidades existen y cómo se relacionan, ya estás pensando orientado a objetos.
+
+## Ver también
+
+La técnica de sustantivos y verbos ya te da una hoja de ruta para diseñar. El siguiente paso es ver ese proceso aplicado en un programa completo y ejecutable, antes de descomponer cada concepto por separado:
+
+- [Primer Programa Orientado a Objetos](primer_programa.md) — todos los conceptos juntos en un ejemplo concreto
+- [Clases y Objetos](../fundamentos/clases_y_objetos.md) — formalización de la distinción clase / instancia
 
 ---

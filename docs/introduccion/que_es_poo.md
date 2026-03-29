@@ -1,5 +1,7 @@
 # ¿Qué es la Programación Orientada a Objetos?
 
+En la sección anterior definimos acoplamiento y cohesión como las métricas clave del diseño de software, y vimos las limitaciones del paradigma estructurado cuando los sistemas crecen. Acá definimos el paradigma que responde a esas limitaciones: la POO, su origen histórico, y los cuatro pilares sobre los que se apoya.
+
 La Programación Orientada a Objetos (POO) es un paradigma de diseño y desarrollo de software que organiza el código en torno a **objetos**: entidades que combinan estado (datos) y comportamiento (operaciones) en una sola unidad cohesiva.
 
 Grady Booch, uno de sus principales referentes, la define así:
@@ -102,5 +104,12 @@ Estos cuatro principios no son independientes: se refuerzan mutuamente. Un buen 
 | Pregunta central de diseño | ¿Qué pasos necesito seguir? | ¿Qué entidades existen y cómo se relacionan? |
 
 > **En la práctica:** el cambio más difícil no es aprender la sintaxis de las clases — es cambiar la manera de *pensar* el problema. La mayoría de los estudiantes que llegan de programación procedural tienden a escribir funciones dentro de clases sin aprovechar los objetos. Ese cambio de mentalidad es el tema de la próxima sección.
+
+## Ver también
+
+Conocer qué es la POO y sus cuatro características es el punto de partida. El desafío que sigue no es de sintaxis sino de forma de pensar:
+
+- [El Cambio de Mentalidad](cambio_de_mentalidad.md) — de funciones a objetos, el error más frecuente al arrancar con POO
+- [Los Cuatro Elementos del Modelo](../fundamentos/elementos.md) — cómo se articulan abstracción, encapsulamiento, modularidad y jerarquía
 
 ---

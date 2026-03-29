@@ -1,5 +1,10 @@
 # Testing de Clases con pytest
 
+!!! info "Antes de continuar"
+    Esta sección da por sentado que sabés definir clases con `@property` y lanzar excepciones con mensajes descriptivos. Revisá [Encapsulamiento](../fundamentos/encapsulamiento.md) y [Excepciones](excepciones.md) si necesitás repasar.
+
+Diseñamos clases con encapsulamiento, contratos claros y excepciones bien definidas. Los tests son la forma de verificar que ese diseño se comporta como esperamos — y de garantizar que siga haciéndolo después de cualquier cambio futuro. En POO, un test unitario verifica el contrato público de una clase, no sus detalles internos.
+
 Un programa sin tests es un programa que no sabés si funciona. En POO, los tests tienen un rol especial: **verifican el contrato público de una clase**. Si cambiás la implementación interna sin romper los tests, sabés que el comportamiento externo se preservó.
 
 ## ¿Qué es un test unitario?
@@ -305,5 +310,12 @@ class TestControladorMaquina:
         # El sensor de temperatura nunca debe ser consultado si está inactivo
         sensor_mock.leer_temperatura.assert_not_called()
 ```
+
+## Ver también
+
+Con tests en mano, estás listo para aplicar principios de diseño de mayor nivel que hacen que el código sea más fácil de extender y mantener:
+
+- [Principios SOLID](../avanzado/solid.md) — cinco principios para diseños mantenibles; los tests son la red de seguridad que los hace aplicables
+- [Checklist](../avanzado/checklist.md) — lista de verificación antes de entregar cualquier trabajo práctico
 
 ---

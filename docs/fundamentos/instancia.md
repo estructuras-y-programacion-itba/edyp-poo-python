@@ -1,5 +1,7 @@
 # Métodos de Instancia
 
+Ya sabemos que una clase define atributos (estado) y métodos (comportamiento). Los métodos de instancia son la forma más directa de implementar ese comportamiento: acceden al estado del objeto a través de `self` y son el tipo de método que más frecuentemente vas a escribir.
+
 Los métodos de instancia son el tipo más común de métodos en Python. Son funciones definidas dentro de una clase que operan sobre un objeto específico: cada llamada a un método de instancia tiene acceso al estado particular de *ese* objeto.
 
 ## `self`: el nexo entre el método y el objeto
@@ -245,5 +247,13 @@ Los métodos de instancia son la única vía legítima para interactuar con los 
 Si el estado fuera público, cualquier parte del código podría hacer `linea._estaciones["CNC-01"] = None` sin pasar por ninguna validación. Los métodos de instancia son los guardianes de la consistencia del estado.
 
 > **En la práctica:** una señal de buen diseño es que podés cambiar completamente la representación interna del estado (por ejemplo, pasar de un `dict` a una `list` para las estaciones) sin que el código externo que usa la línea se entere. Eso es encapsulamiento real funcionando.
+
+## Ver también
+
+Los métodos de instancia son el núcleo del comportamiento de un objeto. Las siguientes secciones agregan capas que hacen ese comportamiento más robusto y expresivo:
+
+- [Type Hinting](type_hinting.md) — cómo documentar los tipos de parámetros y retorno de tus métodos
+- [Encapsulamiento](encapsulamiento.md) — cómo los métodos actúan como guardianes del estado interno
+- [Métodos Mágicos](../metodos/magicos.md) — métodos especiales que integran tus clases con el lenguaje
 
 ---

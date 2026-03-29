@@ -1,5 +1,7 @@
 # Clases y Objetos
 
+En el primer programa vimos una clase en acción: `PiezaEnInventario` como molde, y `bulon`, `tuerca`, `arandela` como objetos concretos. Ahora formalizamos esa distinción — es la base sobre la que se construye todo lo demás en POO.
+
 La distinción entre clase y objeto es la primera y más fundamental de toda la POO. Confundirlos es el error conceptual más común en los primeros pasos.
 
 ## La clase: el molde, no la cosa
@@ -168,5 +170,12 @@ for p in piezas:
 ```
 
 > **En la práctica:** un error clásico de quienes empiezan es usar atributos de *clase* (definidos directamente en el cuerpo de la clase, fuera de `__init__`) pensando que son atributos de instancia. Los atributos de clase son compartidos por *todas* las instancias, lo cual raramente es lo que se quiere. Siempre asigná el estado inicial del objeto dentro de `__init__` usando `self`.
+
+## Ver también
+
+Con la distinción clase / objeto clara, el siguiente paso es entender cómo los métodos de instancia trabajan con ese estado:
+
+- [Métodos de Instancia](instancia.md) — cómo `self` referencia al objeto y qué rol cumplen los métodos
+- [Encapsulamiento](encapsulamiento.md) — cómo controlar quién puede modificar los atributos
 
 ---

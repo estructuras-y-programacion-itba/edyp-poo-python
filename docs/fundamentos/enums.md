@@ -1,5 +1,7 @@
 # Enumeraciones (`Enum`)
 
+El encapsulamiento protege el estado de accesos no autorizados. Pero hay una forma más sutil de error: asignar un valor "válido" en tipo pero inválido en dominio — por ejemplo, `estado = "en_espra"` (con typo) en lugar de `"en_espera"`. Los `Enum` eliminan esa categoría de error al restringir el conjunto de valores posibles directamente en el tipo.
+
 En varios ejemplos de este material vas a encontrar código como `EstadoPieza.COMPLETADA` o `EstadoPieza.EN_PROCESO`. Esos valores vienen de una **enumeración**, una clase especial de Python que agrupa un conjunto fijo de constantes con nombre.
 
 ## ¿Para qué sirve un `Enum`?
@@ -203,5 +205,12 @@ El `Enum` tiene ventajas claras en comparación:
 | Comparación accidental con strings | `estado == "activa"` pasa sin error | `estado == EstadoMaquina.ACTIVA` es explícito |
 
 > **En la práctica:** usá `Enum` siempre que tengas un conjunto cerrado y conocido de valores posibles para un atributo. Los casos más comunes en diseño OO son estados de un ciclo de vida (`EN_ESPERA`, `EN_PROCESO`, `COMPLETADA`), categorías fijas, y modos de operación. Si los valores pueden cambiar o agregarse en runtime, un `Enum` no es la herramienta correcta.
+
+## Ver también
+
+Con `Enum`, las clases tienen estados bien definidos y acotados. La siguiente sección cierra el capítulo de Fundamentos integrando todas las herramientas bajo los cuatro elementos del modelo orientado a objetos:
+
+- [Los Cuatro Elementos del Modelo](elementos.md) — cómo abstracción, encapsulamiento, modularidad y jerarquía se articulan
+- [Métodos Mágicos](../metodos/magicos.md) — los `Enum` aparecen frecuentemente junto a métodos como `__eq__` y `__hash__`
 
 ---

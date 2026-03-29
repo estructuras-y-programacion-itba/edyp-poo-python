@@ -1,5 +1,10 @@
 # Abstracción
 
+!!! info "Antes de continuar"
+    Esta sección usa herencia y polimorfismo como base. Asegurate de haber leído [Herencia](herencia.md) y [Polimorfismo](polimorfismo.md) antes de continuar.
+
+El polimorfismo a través de duck typing es flexible, pero informal: si una subclase olvida implementar un método, el error aparece en runtime, cuando ese método es llamado. Las clases abstractas resuelven eso: fuerzan el contrato en el momento de instanciar la clase, no después.
+
 Identificar las características esenciales de un objeto e ignorar los detalles irrelevantes para el contexto es, precisamente, la definición de abstracción. Según Booch, *"una abstracción denota las características esenciales de un objeto que lo distinguen de todos los demás tipos de objetos y, por lo tanto, proporcionan límites conceptuales claramente definidos en relación con la perspectiva del observador."*
 
 ![La abstracción se centra en las características esenciales de un objeto según la perspectiva del observador](../img/abstraccion.png)
@@ -224,5 +229,12 @@ print(robot.describir())          # ❌ describir() no existe en duck typing —
 ```
 
 > **En la práctica:** en proyectos de equipo o en código que otros van a consumir, preferí ABC. El contrato explícito evita bugs silenciosos: si olvidás implementar un método, el error aparece al instanciar la clase, no horas después en producción cuando ese método es llamado. Para código propio y proyectos pequeños, duck typing es perfectamente válido y más ágil.
+
+## Ver también
+
+Con abstracción e herencia estudiadas, el debate de diseño más frecuente en la práctica es cuándo usar cada una:
+
+- [Composición vs. Herencia](composicion_vs_herencia.md) — la decisión de diseño más importante y más abusada en POO
+- [Principios SOLID](../avanzado/solid.md) — especialmente el Principio de Sustitución de Liskov, que formaliza cuándo la herencia es correcta
 
 ---

@@ -1,5 +1,7 @@
 # Métodos Mágicos (Dunder Methods)
 
+Ya conocés los métodos de instancia (acceden al estado del objeto), los métodos de clase (operan sobre la clase) y los estáticos (funciones de dominio sin estado). Los métodos mágicos son una categoría aparte: Python los llama automáticamente en respuesta a operadores, funciones built-in y protocolos del lenguaje — nunca los llamás directamente.
+
 Los métodos mágicos, también llamados **dunder methods** (de *double underscore*), son métodos especiales con la forma `__nombre__`. Python los llama automáticamente en respuesta a operadores, funciones built-in y otras operaciones del lenguaje — vos nunca los llamás directamente.
 
 Su propósito es permitir que tus clases se integren con el lenguaje de manera natural: que tus objetos respondan a `len()`, `print()`, los operadores `+`, `==`, `in`, y más, exactamente igual que los tipos built-in de Python.
@@ -290,5 +292,12 @@ for p in piezas_ordenadas:
 ```
 
 > **En la práctica:** el error más frecuente con dunder methods es definir `__eq__` sin definir `__hash__`. Cuando Python detecta que definiste `__eq__`, automáticamente hace que el objeto no sea hasheable (para evitar inconsistencias). Si querés que el objeto sea usable en sets y como clave de dict, siempre definí ambos juntos. La regla: si dos objetos son iguales según `__eq__`, su `__hash__` debe retornar el mismo valor.
+
+## Ver también
+
+Con el kit de herramientas de métodos completo, el próximo desafío es diseñar cómo las clases se relacionan entre sí en sistemas más complejos:
+
+- [Relaciones entre Clases](../modelado/relaciones.md) — taxonomía de relaciones: asociación, agregación, composición, herencia
+- [Encapsulamiento](../fundamentos/encapsulamiento.md) — complemento natural: `__eq__` y `__hash__` trabajan de la mano con atributos privados
 
 ---

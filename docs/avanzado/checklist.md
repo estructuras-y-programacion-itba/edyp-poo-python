@@ -1,5 +1,7 @@
 # Checklist
 
+Esta es la última sección del material. Todos los conceptos — clases, métodos, encapsulamiento, relaciones, herencia, polimorfismo, abstracción, composición, excepciones, testing y principios SOLID — están ahora disponibles como herramientas. Esta checklist te ayuda a verificar que los estás aplicando correctamente antes de entregar cualquier trabajo práctico.
+
 ## Checklist: Antes de Entregar
 
 Un buen diseño orientado a objetos no implica únicamente que el código funcione — implica que sea mantenible, legible y correcto por diseño. Usá esta lista como guía antes de entregar cualquier trabajo práctico.
