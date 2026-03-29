@@ -7,7 +7,8 @@ Los capítulos anteriores te dieron las herramientas para construir sistemas ori
 
 ## S — Single Responsibility Principle (Principio de Responsabilidad Única)
 
-Una clase debe tener una, y solo una, razón para cambiar.
+!!! abstract "Definición"
+    Una clase debe tener una, y solo una, razón para cambiar.
 
 Tomá el caso de una clase `Maquina` que gestiona su estado operativo, guarda eventos en base de datos y además genera reportes de turno: está haciendo demasiado. Separar responsabilidades conduce a un diseño más mantenible: `Maquina` (estado y ciclos), `RegistradorEventos` (persistencia), `GeneradorReportes` (presentación).
 
@@ -32,7 +33,8 @@ class GeneradorReportes:
 
 ## O — Open/Closed Principle (Principio de Abierto/Cerrado)
 
-Las clases deben estar abiertas para su extensión, pero cerradas para su modificación.
+!!! abstract "Definición"
+    Las clases deben estar abiertas para su extensión, pero cerradas para su modificación.
 
 Agregar nueva funcionalidad no debería requerir modificar código que ya funciona —y arriesgarse a romperlo. La solución es el polimorfismo: extendé el comportamiento agregando nuevas clases en lugar de acumular `if/else`.
 
@@ -69,7 +71,8 @@ class ProcesadorPintura(ProcesadorBase):
 
 ## L — Liskov Substitution Principle (Principio de Sustitución de Liskov)
 
-Las clases derivadas deben poder sustituirse por sus clases base sin alterar el comportamiento correcto del programa.
+!!! abstract "Definición"
+    Las clases derivadas deben poder sustituirse por sus clases base sin alterar el comportamiento correcto del programa.
 
 Cuando una clase hija viola el contrato establecido por la clase base —por ejemplo, `EstacionMantenimiento` lanzando una excepción en `procesar()` cuando la base promete que ese método es válido—, el principio queda roto. La herencia debe tener sentido tanto semántico como funcional.
 
@@ -114,7 +117,8 @@ for est in estaciones:
 
 ## I — Interface Segregation Principle (Principio de Segregación de Interfaz)
 
-Ninguna clase debería verse forzada a depender de métodos que no utiliza.
+!!! quote "Definición"
+    Ninguna clase debería verse forzada a depender de métodos que no utiliza.
 
 Aunque Python no tiene "interfaces" explícitas, este principio cobra especial relevancia al diseñar Clases Base Abstractas (ABCs) o Protocolos. Crear una clase base gigante que obligue a sus subclases a implementar métodos sin sentido para ellas es exactamente lo que se busca evitar: mejor definir contratos pequeños y específicos.
 
@@ -175,7 +179,9 @@ class SensorBasico(IMonitoreable):
 
 ## D — Dependency Inversion Principle (Principio de Inversión de Dependencias)
 
-Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones.
+!!! abstract "Definición"
+    Los módulos de alto nivel no deben depender de módulos de bajo nivel.
+    Ambos deben depender de abstracciones.
 
 Cuando una clase de alto nivel instancia directamente sus dependencias concretas, queda acoplada a una implementación específica —difícil de testear, difícil de cambiar. La inversión de dependencias rompe ese acoplamiento: en lugar de crear la dependencia, la clase la recibe desde afuera (inyección de dependencia), dependiendo de una abstracción que puede tomar cualquier forma concreta.
 
