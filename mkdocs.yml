@@ -134,6 +134,9 @@ nav:
       - Checklist y Fuentes: avanzado/checklist.md
 
 extra:
+  analytics:
+    provider: google
+    property: G-JPMVQT48N4
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/estructuras-y-programacion-itba/edyp-poo-python
